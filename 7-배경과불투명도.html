@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>7-배경과불투명도</title>
+  <style>
+    p{
+      font-size: 32px;
+      color: #999;
+    }
+
+    /* body{
+      background-image: url(image/flower2.png);
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-attachment: fixed;
+      background-size: 200px;
+    } */
+
+    /* 축약1
+    body{
+      background: url(image/flower2.png) no-repeat right top fixed;
+      background-size: 200px;
+    } */
+
+    /* 축약2 :background-size는 poistion값에 이어서 / 로 연결하여 축약함 */
+    /* body{background: url(image/flower2.png) no-repeat right top/200px fixed;} */
+
+    /* body{
+      background: url(image/crop.jpg) no-repeat center center;
+      background-size: cover;
+
+      축약시-> background: url(image/crop.jpg) no-repeat center/cover;
+    } */
+
+    /* background-size:배경으로 넣은 이미지의 사이즈를 조정
+    contain: 이미지를 자르거나 늘리지않고 컨테이너 내에서 이미지 크기를 최대한 조정
+    cover:이미지의 비율을 유지하면서 컨테이너를 채울수 있도록 함(높이와 너비가 모두 컨테이너를 완전히 덮음)
+    auto:고유한 비율이 유지되도록 해당방향으로 이미지 크기 조정
+    */
+
+    .back1 div{
+      border: 5px solid #000;
+      width: 400px;
+      height: 400px;
+      margin: 10px;
+      background-image: url(image/blueheart.png);
+    }
+    .back1 div.bg1{background-repeat: no-repeat;}  /* 한번만 */
+    .back1 div.bg2{background-repeat: repeat-x;}  /* 가로방향반복 */
+    .back1 div.bg3{background-repeat: repeat-y;}  /* 세로방향반복 */
+    .back1 div.bg4{background-repeat: space;} /* 일정한 간격을 줌 */
+    .back1 div.bg5{background-repeat: round;} /* 간격없이 붙음 */
+
+    /* 
+    div.bg1{} ->공백이 없는 경우는 자식개념이 아님 동등한 위치에 선택자임을 뜻함 
+    div .bg1{} -> 공백이 있는 경우는 자식개념이 되어서 div태그 아래에 있는 bg1 클래스를 뜻함
+    */
+
+    .back2 div{
+      border: 5px solid red;
+      width: 400px;
+      height: 400px;
+      margin: 10px;
+    }
+    /* 배경이미지+배경색 */
+    .back2 .bg6{background: url(image/logo2.png) no-repeat right bottom/100px gold;}
+    /* 배경이미지+배경이미지 */
+    .back2 .bg7{
+      background-image: url(image/bg.png), url(image/heart.png);
+      background-repeat: no-repeat;
+      background-position: center, right top;
+      background-size: auto, 100px;
+    }
+    /* 배경이미지+배경그레디언트 */
+    .back2 .bg8{
+      background: url(image/logo2.png) no-repeat center,
+      linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    }
+
+
+    /* 불투명도 */
+    body{background: url(image/bg-img1.png);}
+    table{
+      width: 300px;
+      height: 300px;
+      border: 3px solid #000;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+      /* background-color: #000;
+      opacity: 0.5; 
+      ->위의 방법으로 불투명도를 사용하게 되면 배경이외에 안의 텍스트도 같이 불투명해진다.->해결방법:rgba를 사용한다.
+      */
+      background: rgba(0,0,0,0.5);
+    }
+    table td{border: 1px dotted #666;}
+  </style>
+</head>
+<body>
+  
+  <h1>background:배경이미지의 배열방법</h1>
+  <p>
+    대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다. 대통령으로 선거될 수 있는 자는 국회의원의 피선거권이 있고 선거일 현재 40세에 달하여야 한다. 대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다. 제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후 5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다. 대통령은 조국의 평화적 통일을 위한 성실한 의무를 진다. 대통령은 내란 또는 외환의 죄를 범한 경우를 제외하고는 재직중 형사상의 소추를 받지 아니한다.
+
+    각급 선거관리위원회의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국정의 중요한 사항에 관한 대통령의 자문에 응하기 위하여 국가원로로 구성되는 국가원로자문회의를 둘 수 있다. 대통령은 취임에 즈음하여 다음의 선서를 한다. 법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다. 모든 국민은 종교의 자유를 가진다. 국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 일반사면을 명하려면 국회의 동의를 얻어야 한다. 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.
+
+    국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다. 선거와 국민투표의 공정한 관리 및 정당에 관한 사무를 처리하기 위하여 선거관리위원회를 둔다. 나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.
+
+    사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다. 대한민국은 통일을 지향하며, 자유민주적 기본질서에 입각한 평화적 통일 정책을 수립하고 이를 추진한다. 정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수 있다. 국가안전보장회의는 대통령이 주재한다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다. 모든 국민은 학문과 예술의 자유를 가진다. 타인의 범죄행위로 인하여 생명·신체에 대한 피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수 있다.
+
+    대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다. 법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다. 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다. 국방상 또는 국민경제상 긴절한 필요로 인하여 법률이 정하는 경우를 제외하고는, 사영기업을 국유 또는 공유로 이전하거나 그 경영을 통제 또는 관리할 수 없다. 대통령의 선거에 관한 사항은 법률로 정한다. 군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다. 대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다.
+  </p>
+
+  <div class="back1">
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+    <div class="bg4"></div>
+    <div class="bg5"></div>
+  </div>
+
+  <div class="back2">
+    <div class="bg6"></div>
+    <div class="bg7"></div>
+    <div class="bg8"></div>
+  </div>
+
+  <h1>opacity:불투명도(0~1)</h1>
+  <table>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>8-그림자효과</title>
+  <style>
+    body{
+      font-family: arial;
+      background-color: #808080;
+    }
+    .shadow1{
+      font-size: 48px;
+      color: #fff;
+      text-shadow: 10px 20px 10px #000;
+      /*오른쪽거리 아래쪽거리 흐림도 색상*/
+    }
+    .shadow2{
+      font-size: 55px;
+      color: #333;
+      text-shadow: -5px -5px 5px #fff; 
+      /*왼쪽거리 위쪽거리 흐림도 색상*/ 
+    }
+    .shadow3{
+      font-size: 60px;
+      text-shadow:0 0 4px #ccc,
+        0 -5px 4px #ff3,
+        2px -10px 6px #fd3,
+        -2px -15px 11px #f80,
+        2px -19px 18px #f20;
+    }
+
+    .heading{
+      border: 3px solid crimson;
+      background-color: #fff;
+      text-shadow: 5px 2px 5px #f00;
+      box-shadow: 10px 10px 30px #000;
+    }
+
+    .btn{
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+      margin: 50px;
+      border: 3px solid #000;
+    }
+    #shd1{box-shadow:10px 10px 5px #fff;}
+    #shd2{box-shadow:10px 10px 50px #fff inset;}
+    /*inset:안쪽그림자(box-shadow만 가능)*/
+
+    .shd3{
+      width: 300px;
+      height: 200px;
+      border-radius: 30px;
+      box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+    }
+
+    img{box-shadow: 15px 15px 0 #7ec1ea;}
+  </style>
+</head>
+<body>
+  
+  <h1>text-shadow:텍스트 그림자효과</h1>
+  <h2 class="shadow1">Joandora</h2>
+  <h2 class="shadow2">Joandora</h2>
+  <h2 class="shadow3">Joandora</h2>
+
+  <h1>box-shadow:박스 그림자효과</h1>
+  <div class="heading"><h1>텍스트 또는 박스에 그림자 효과 만들기</h1></div>
+  <div class="btn" id="shd1"></div>
+  <div class="btn" id="shd2"></div>
+
+  <h1>구글소스 이용하기</h1>
+  <div class="shd3"></div>
+
+  <h1>이미지에 그림자효과주기</h1>
+  <img src="image/sky.jpg" alt="">
+
+</body>
+</html>

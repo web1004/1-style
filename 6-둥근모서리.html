@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>6-둥근모서리</title>
+  <style>
+    .frame div{
+      width: 200px;
+      height: 200px;
+      background-color: deepskyblue;
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+      margin: 50px;
+      border: 10px solid gold;
+      text-align: center;
+      /* vertical-align: middle; ->적용되지않음 */
+      line-height: 200px; /* 텍스트가 한줄일때 수직가운데정렬하는 방법->부모의 높이와 동일하게 줄간격을 줌 */
+    }
+    .frame .box1{border-radius: 20px;}
+    .frame .box2{border-radius: 50px;}
+    .frame .box3{border-radius: 50%;}
+    .frame .box4{border-radius: 50px 0 50px 0;}
+    .frame .box5{border-radius: 100% 0 0 0;}
+    .frame .box6{border-radius: 50% 50% 50% 0;}
+    .frame .box7{border-radius: 100% 0 100% 0;}
+    .frame .box8{border-radius: 50% 50% 0 0;}
+    .frame .box9{
+      width: 400px;  /* 가로와 세로 크기가 다를때(직사각형)는 타원이 됨 */
+      border-radius: 50%;
+    }
+
+    .box10 img{border-radius: 63% 37% 51% 49% / 56% 33% 67% 44% ;}
+  </style>
+</head>
+<body>
+  
+  <h1>border-radius:둥근모서리</h1>
+  <div class="frame">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+    <div class="box5">box5</div>
+    <div class="box6">box6</div>
+    <div class="box7">box7</div>
+    <div class="box8">box8</div>
+    <div class="box9">box9</div>
+  </div>
+
+  <div class="box10">
+    <img src="image/trip.jpg" alt="trip">
+  </div>
+
+</body>
+</html>

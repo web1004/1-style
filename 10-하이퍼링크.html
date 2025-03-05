@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>10-하이퍼링크</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    body{
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #555;
+    }
+    h1{}
+
+    /* 기본하이퍼링크 */
+    /* a:link, ->하이퍼링크가 걸린상태
+    a:visited, ->한번 누른적이 있는 상태
+    a:active, ->누르고 있는 동안상태
+    a:hover ->마우스오버 상태
+    {text-decoration: none;}  */
+
+    a{ /*하이퍼링크의 모든 상태를 말함(:link,:visited,:active,:hover) */
+      text-decoration: none;
+      font-weight: 500;
+      color: crimson;
+    }
+    a:hover{
+      color: royalblue;
+      /* text-decoration: underline;  
+      ->각각의 클래스에 적용하지 않은 스타일은 기본적용을 따르기 때문에 공통부분에 넣는것은 비추전
+      */
+    }
+
+    /* 클래스별 하이퍼링크 설정 */
+    .link1{
+      color: orange;
+    }
+    .link1:hover{
+      background-color: brown;
+      color: gold;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  
+  <h1>하이퍼링크란?</h1>
+  <p>
+    인터넷에서 홈페이지를 방문한 경우 <a href="#none">파란글자에 밑줄이 있는 글자</a>나 어떤 그림이나 사진에 마우스 포인트를 올려놓으면 마우스 포인트가 화살표 모양에서 손 모양으로 바뀌는 것을 본 적이 있을 것이다.이렇게 마우스가 손 모양으로 바뀌는 것을 <a href="#none" class="link1">하이퍼텍스트</a>하고 하며, 하이퍼텍스트를 클릭하면 연결되어 있는 다른 페이지가나타난다. 하이퍼텍스트를 클릭하였을 때 다른 문서로 연결시켜주는 것을 <a href="#none" class="link2">하이퍼링크</a>라고 한다.
+  </p>
+
+  <p>
+    html에서는 한 문서에 한개의 하이퍼링크 설정만 할수 있었지만, css에서는 class를 이용해 한 문서에 <a href="#none" class="link3">여러개의 하이퍼링크</a>를 설정할 수 있다.
+  </p>
+
+  <div class="link4">
+    <a href="#none">BACK</a> | <a href="#none">LIST</a> | <a href="#none">NEXT</a>
+  </div>
+
+</body>
+</html>
