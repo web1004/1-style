@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>16-플랙서블박스(FlexibleBox)</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  
+  <h1>Flexible Box</h1>
+  <h1>1.부모박스인 Flex Container 에 적용하는 속성들</h1>
+
+  <h2>(1)Flexible Box를 이용한 레이아웃 구성(display:flex 와 display:inline-flex의 차이)</h2>
+  <div class="con container11">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  <div class="con container12">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h2>(2)flex-direction:아이템들이 배치되는 축의 방향을 결정(메인축의 방향을 가로로 할지 세로로 할지....)</h2>
+  <div class="con container21">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  <div class="con container22">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  <div class="con container23">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  <div class="con container24">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h2>(3)flex-wrap:컨테이너가 더 이상 아이템들을 한 줄에 담을 여유 공간이 없을 때 아이템 줄바꿈을 어떻게 할지 결정하는 속성</h2>
+  <div class="con container31">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+  <div class="con container32">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+  <div class="con container33">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+
+  <h2>(4)flex-flow:flex-direction과 flex-wrap을 한꺼번에 지정할 수 있는 단축 속성(flex-direction, flex-wrap의 순으로 한 칸 떼고 작성)</h2>
+  <div class="con container41">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+  <div class="con container42">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+
+  <h2>(5)justify-content:메인축 방향정렬</h2>
+  <div class="con container51">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="con container52">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="con container53">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="con container54">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="con container55">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="con container56">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+
+  <h2>(6)align-items:수직축 방향 정렬</h2>
+  <div class="conh container61">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conh container62">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conh container63">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conh container64">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+
+  <h2>(7)align-content:교차축의 정렬방법으로  "flex-wrap: wrap;" 속성을 통해 items가 여러줄(2줄이상)이고 
+    여백이 있을 경우만 사용할 수 있다.</h2>
+  <div class="conhh container71">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conhh container72">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conhh container73">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conhh container74">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conhh container75">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+  <div class="conhh container76">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+
+  <h1>2.자식박스인 Flex Item에 적용하는 속성들</h1>
+  <h2>(1)align-self:해당 아이템의 수직축 방향 정렬(기본값은 auto,align-items 보다 우선순위가높음)</h2>
+  <div class="conh container8">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+  </div>
+
+  <h2>(2)flex:flex-basis,flex-grow,flex-shrink(크기분배,유동사이즈)</h2>
+  <div class="container9">
+    <div class="box91">1번 박스</div>
+    <div class="box92">2번 박스</div>
+    <div class="box93">3번 박스</div>
+  </div>
+
+  <h2>(3)order(순서변경)</h2>
+  <div class="container10">
+    <div class="box101">01</div>
+    <div class="box102">02</div>
+    <div class="box103">03</div>
+  </div>
+
+  <h1>3.Flex 레이아웃</h1>
+  <div class="yellowgreen">
+    <div class="royalblue">
+      <div class="crimson">
+        <div class="gray"></div>
+        <div class="gray"></div>
+        <div class="gray"></div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

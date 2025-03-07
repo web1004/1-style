@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>11-display와float속성</title>
+  <style>
+    /* 01 */
+    .dis1 span{
+      border: 1px solid red;
+      width: 500px;
+      height: 100px;
+      margin: 30px;
+      /* display: block; ->크기와 마진상하가 적용은 되지만 요소들이 한줄에 배치되지않음*/
+      display: inline-block; /* 줄이 바뀌지 않으면서 크기와 마진을 적용하려면 inline-block */
+    }
+    .dis1 div{
+      border: 1px solid blue;
+      width: 500px;
+      height: 100px;
+      margin: 30px;
+      display: inline-block;
+    }
+    .dis1 button{
+      width: 500px;
+      height: 100px;
+      margin: 30px;
+      display: block;
+    }
+
+    /* 02 */
+    .dis2{
+      border: 1px solid green;
+      width: 600px;
+      text-align: center;
+      margin: auto;  
+      /* 요소(자식을 품고 있는 부모)의 수평가운데 정렬-가로너비가 있어야 적용됨(가로100%는 적용되지않음) 
+      *marign: 200px auto; ->상하 마진 200px이고, 좌우는 auto 가운데정렬
+      *marign: 50px auto 20px; ->상 마진 50px이고, 좌우는 auto 가운데정렬, 하 마진 20px
+      */
+    }
+    .dis2 div{
+      border: 1px solid blue;
+      width: 300px;
+      margin: 50px auto; /* 상하 50px, 좌우는 가운데(auto) */
+    }
+    .dis2 span{
+      border: 1px solid purple;
+      width: 300px;
+      margin: 50px auto;  /* span태그는 inline요소로 적용되지않음 */
+      display: block;
+    }
+    .dis2 button{
+      border: 1px solid red;
+      width: 400px;
+      margin: 30px auto;
+    }
+
+    /* 03 inline 또는 inline-block요소를 중앙정렬하려면 block요소의 부모에 "text-align:center" 속성으로 적용함*/
+    .dis3{
+      border: 1px solid #000;
+      text-align: center;
+    }
+
+    /* 04 block는 가로100%, inline,inline-block는 내용만큼이 기본크기이다.*/
+    .dis4{background-color: gray;}
+    .dis4 span{background-color: yellowgreen;}
+    .dis4 button{background-color: royalblue}
+
+    /* 05 요소를 보이지 않게 하는 3가지 방법
+    (1)display:none;
+    (2)visibility:hidden; (보이게 하는건 visibility: visible; )
+    (3)opacity:0;   
+    */
+
+    .dis5 div{
+      width: 200px;
+      height: 300px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      /* vertical-align: middle;  ->적용되지않음*/
+      line-height: 300px;
+      display: inline-block; /* 가로배열이 가능하지만 오른쪽에 5px정도의 기본여백이 생김 */
+      /* float: left; */
+      cursor: pointer; /* a태그를 사용하지 않아도 손모양이 나오게 함 */
+    }
+    .dis5 .child1{background-color: skyblue;}
+    .dis5 .child2{
+      background-color: yellowgreen;
+      /* display: none; */  /* 공간도 없고 존재도 하지 않기 때문에 커서포인터를 줄수 없음 */
+      /* visibility:hidden; */  /*공간은 있지만 존재 자체는 사라지기 때문에 커서포인터를 줄수 없음 */
+      opacity:0; /*공간도 있고 존재 자체도 있고 보이지만 않을뿐이므로 커서포인터를 줄수 있음 */
+    }
+    .dis5 .child3{background-color: gray;}
+
+    /* 06 float속성(left/right) 
+    자식이 모두 float를 적용하면 부모가 높이를 인식하지 못하는 문제 발생
+    ->해결:folat를 적용한 자식의 부모에게 "overflow:hidden;"을 적용함*/
+    
+    #boxs{
+      width: 500px;
+      border: 5px solid #333;
+      text-align: center;
+      padding: 10px;
+      overflow: hidden;  /* float문제 해결 */
+    }
+    .box1, .box2{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+      background-color: #dedede;
+    }
+    .box1{float: left;}
+    .box2{float: right;}
+  </style>
+</head>
+<body>
+  
+  <h1> 01.display속성(inline, inline-block, block 특징)</h1>
+  <div class="dis1">
+    <span>인라인요소(Inline Elements)</span>
+    <span>인라인요소(Inline Elements)</span>
+    <span>인라인요소(Inline Elements)</span> 
+  </div>
+  <hr>
+
+  <div class="dis1">
+    <div>블록요소(Block Elements)</div>
+    <div>블록요소(Block Elements)</div>
+    <div>블록요소(Block Elements)</div>
+  </div>
+  <hr>
+
+  <div class="dis1">
+    <button>인라인블록요소(Inline Block Elements)</button>
+    <button>인라인블록요소(Inline Block Elements)</button>
+    <button>인라인블록요소(Inline Block Elements)</button>
+  </div>
+  <hr>
+
+  <h1>02.margin:auto;</h1>
+  <div class="dis2">
+    <div>Div</div>
+    <span>Span</span>
+    <hr>
+    <button>Button</button>
+  </div>
+  <hr>
+
+  <h1>03.inline 또는 inline-block 요소의 중앙정렬</h1>
+  <div class="dis3">
+    <button>Button</button>
+  </div>
+  <hr>
+
+  <h1>04.기본너비</h1>
+  <div class="dis4">
+    <span>inline요소</span>
+    <button>inline-block요소</button>
+  </div>
+
+  <h1>05.요소를 보이지 않게 하는 3가지 방법과 차이점</h1>
+  <div class="dis5">
+    <div class="child1">child1</div>
+    <div class="child2">child2</div>
+    <div class="child3">child3</div>
+  </div>
+  <hr>
+
+  <h1>06.태그를 배치하는 float속성</h1>
+  <div id="boxs">
+    <div class="box1">box01</div>
+    <div class="box2">box02</div>
+  </div>
+
+</body>
+</html>
