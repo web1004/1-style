@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실습3-프로필카드만들기-완성</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+    body{
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0;
+      height: 100vh;
+      background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .profile{
+      width: 450px;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding-top: 80px;
+      position: relative;
+    }
+    .profile .face{
+      border-radius: 50%;
+      border: 5px solid #eee;
+      position: absolute;
+      top: -75px;
+      left: calc(50% - 75px);  
+      /* 요소의 중심점이 가운데가 아니고 왼쪽임 -> profile 요소의 50% 지점에서 이미지 가로크기(150px)의 50%만큼 빼줌 */
+    }
+    .top h2{
+      font-family: "Raleway", sans-serif;
+      color: #333;
+      font-size: 26px;
+      text-align: center;
+    }
+    .top ul{
+      width: 90%;  
+      padding: 0;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    .top ul li{
+      list-style-type: none;
+      border-bottom: 1px dotted red;
+      padding: 5px 0;
+
+    }
+    .top ul li span {
+      font-weight: 500;
+      width: 90px;
+      display: inline-block;
+      color: royalblue;
+    }
+
+    .bottom{padding: 20px;}
+    .bottom em{
+      font-style: normal;  /* 기울임 해지 */
+      border-bottom: 1px dashed crimson;
+    }
+    .bottom a{
+      display: block; /* a태그는 inline요소이므로 크기가 적용하게 함 */
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      background-color: royalblue;
+      color: #fff;
+      padding: 6px 0;
+      border: none;
+      text-transform: capitalize;
+      transition: 0.5s;
+    }
+    .bottom a:hover{background-color: navy;}
+    .bottom p:nth-of-type(2){
+      font-family: "Dancing Script", cursive;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="profile">
+    <img class="face" src="image/face.jpg" alt="woman">
+    <div class="top">
+      <h2>kathey a. threlkeld</h2>
+      <ul>
+        <li><span>Birthda</span> July 20, 1992</li>
+        <li><span>Age</span> 29 years old</li>
+        <li><span>Email</span> leland90@tyonyihi.com</li>
+        <li><span>Phone</span> (291)330-6297</li>
+        <li><span>Occupation</span> UI/UX designer</li>
+        <li><span>Address</span> 1227 Platinum Drive Pittsburgh, USA</li>
+      </ul>
+    </div>
+    <div class="bottom">
+      <h2>What I do</h2>
+      <p>
+        I worked at a web agency as a UI/UX designer for about 7 years and as a <em>front-end publisher</em> for the last 7 years. As a front-end publisher, I published various coding websites made with variable skills.
+      </p>
+      <a href="#">contact me</a>
+      <p>I look forward to new projects with good people.<br> thank you.</p>
+    </div>
+  </div>
+
+</body>
+</html>

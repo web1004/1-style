@@ -6,5 +6,70 @@
 </head>
 <body>
   
+  <h1>웹접근성 지침 2.2</h1>
+  <p>2022년 12월 28일 KWCAG 2.2으로 개정 : 4가지 원칙과 각 원칙을 준수하기 위한 14개 지침 및 해당 지침의 준수여부를 확인하기 위해 33개의 검사항목으로 구성</p>
+  <hr>
+
+  <h2>원칙 1 : 인식의 용이성 (Perceivable) : 모든 콘텐츠는 사용자가 인식할 수 있어야 한다.</h2>
+
+  <hr>
+
+  <h2>원칙 2 : 운용의 용이성(Operable) : 사용자 인터페이스 구성요소는 조작 가능하고 내비게이션 할 수 있어야 한다.</h2>
+
+  <hr>
+
+  <h2>원칙 3 : 이해의 용이성(Understandable) : 콘텐츠는 이해할 수 있어야 한다.</h2>
+
+  <hr>
+
+  <h2>원칙 4 : 견고성(Robust) : 웹 콘텐츠는 미래의 기술로도 접근할 수 있도록 견고하게 만들어야 한다.</h2>
+  <h3>4.1.1	(마크업 오류 방지) 마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다.</h3>
+
+  <div class="card">
+    <!--Error <h2><div>Card Headline</div></h2> -->
+    <div><h2>Card Headline</h2></div>
+    <!--Error <span><p>Jop Position : Web Publisher</p></span> -->
+    <p><span>Jop Position : Web Publisher</span></p>
+    <div>Email myemail@myemail.com</div>
+    <button>Contact : 010-1234-5689</button>
+    <a href="#none"><div>Read More</div></a>
+  </div>
+
+  <!-- (1)
+  *block요소는 텍스트,inline,inline-block 요소를 모두 포함할 수 있다.
+  (단, p태그와 h1~h6태그는 block요소이지만 같은 block요소를 포함할수 없다. )
+
+  *inline 요소는 block요소를 포함할 수 없다.(단, a태그는 예외)    
+  -->
+
+  <ul>
+    <!--Error <h2>리스트 제목</h2> -->
+    <li>리스트
+      <div>내용</div>
+    </li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+  </ul>
+
+  <dl>
+    <!--Error <h2>큰제목</h2> -->
+    <dt><div>소제목</div></dt>
+    <dd><div>내용이 들어갑니다.</div></dd>
+  </dl>
+
+  <!-- (2)
+  *목록태그인 ul,ol,dl 은 본인의 지정된 자식이외에는 포함할수 없다.
+  (예:ul,ol 은 li만 자식으로.... dl은 dt,dd만 자식으로)
+  -->
+
+
+
+
+
+
+
+
 </body>
 </html>

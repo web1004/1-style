@@ -91,8 +91,55 @@
     #select7 h1 + h2{color: red;} /* 인접선택자(plus)->바로 다음에 오는 한개 요소만 선택 */
     #select7 h1 ~ h2{background-color: yellow;} /* 형제선택자(tild) ->다음에 오는 요소 모두 선택*/
 
-    
+    /* (8)속성선택자 */
+    input{
+      border: 1px solid #ccc;
+      width: 200px;
+      height: 30px;
+      /* background-color: yellow; */
+    }
+    input[type=text]{background-color: bisque;}
+    input[type=password]{background-color: gold;}
 
+    .frame1 h1[class=text]{color: red;}  /* 클래스 이름이 "text" 와 동일한것 */
+    .frame1 [class*=text]{color: green;}  /* 클래스 이름중에 "text"가 포함된것 */
+
+    /* (9)not 선택자*/
+    #select9 p:not(.active){ /* active클래스를 제외한 나머지 p에 적용 */
+      font-size: 32px;
+      color: red;
+    }
+    #select9 ul li{
+      list-style-type: none;
+      display: inline-block;
+      padding: 0 20px;
+      /* border-left: 1px solid red; */
+    }
+    /* #select9 ul li:first-child{border-left: none;} */
+    #select9 ul li:not(:first-child){border-left: 2px solid crimson;}
+
+    /* (10) 00 ~ 00 범위 지정하기
+    형식: nth-child(n+k):nth-child(-n+m)
+    예)nth-child(n+4):nth-child(-n+8) -> 4번째에서 8번째
+    */
+
+    /* ~5번째까지 */
+    #select10 ul li:nth-child(-n+5){
+      color: orange;
+      background-color: lightyellow;
+    }
+
+    /* 6번째~10번째까지 */
+    #select10 ul li:nth-child(n+6):nth-child(-n+10){
+      color: purple;
+      background-color: pink;
+    }
+
+    /* 11번째부터 ~ */
+    #select10 ul li:nth-child(n+11){
+      color: blue;
+      background-color: skyblue;
+    }
   </style>
 </head>
 <body>
@@ -229,33 +276,6 @@
       <li>대전캠퍼스</li>
       <li>진주캠퍼스</li>
       <li>인천캠퍼스</li>
-    </ul>
-  </div>
-  <hr>
-
-  <h1>(11)선택자 중복을 줄이는 :is</h1>
-  <div id="select11">
-    <header>
-      <h1>Headline in header</h1>
-    </header>
-    <section>
-      <h1>Headline in section</h1>
-    </section>
-    <footer>
-      <h1>Headline in footer</h1>
-    </footer>
-    <h1>Heading</h1>
-    <h1>Heading</h1>
-    <h1>Heading</h1>
-  </div>
-
-  <h1>(12)선택자를 포함(has)하는 경우를 선택함 :has(선택자) </h1>
-  <div id="select12">
-    <h2>어떻게 가입하셨나요?</h2>
-    <ul>
-      <li><input type="radio" name="path"> 구글</li>
-      <li><input type="radio" name="path"> 페이스북</li>
-      <li><input type="radio" name="path"> 지인소개</li>
     </ul>
   </div>
 
