@@ -26,13 +26,14 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       border-radius: 15px;
       padding-top: 80px;
-      position: relative;
+      position: relative; /* 부모설정 */
     }
     .profile .face{
       border-radius: 50%;
       border: 5px solid #eee;
-      position: absolute;
+      position: absolute;  /* 자식설정 */
       top: -75px;
+      /* left: 50%; ->자식의 중심점은 가운데가 아님 */
       left: calc(50% - 75px);  
       /* 요소의 중심점이 가운데가 아니고 왼쪽임 -> profile 요소의 50% 지점에서 이미지 가로크기(150px)의 50%만큼 빼줌 */
     }

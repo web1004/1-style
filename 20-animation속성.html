@@ -4,7 +4,110 @@
   <meta charset="UTF-8">
   <title>20-animation속성</title>
   <style>
+    /* 0% -> from , 100% -> to*/
+    @keyframes rotate-ani{
+      100%{transform: rotate(360deg);}
+    }
+    .rotate{
+      margin: 100px;
+      animation: rotate-ani 5s linear infinite;
+      transform-origin: 50% 50%;
+      /* transform-origin의 50% 50%은 회전의 중심 위치를 나타내며, 완전 원형으로 회전시키려면 이미지 파일의 정중앙에 회전시키려는 중심이 위치해야한다. */
+    }
 
+    @keyframes scale-ani{
+      0%,15%{transform: scale(0);}
+      /* 15%{transform: scale(0);} */
+      40%{transform: scale(0.95);}
+      70%{transform: scale(0.65);}
+      100%{transform: scale(1);}      
+    }
+    .scale{animation: scale-ani 3s infinite alternate;}
+
+    @keyframes ball-ani{
+      from{transform: translateX(0) scale(1);}
+      50%{transform: translateX(500px) scale(0.5);}
+      to{
+        transform: translateX(250px) scale(1.5);
+        background-color: pink;
+      }
+    }
+    .ball{
+      width: 100px;
+      height: 100px;
+      background-color: blueviolet;
+      border-radius: 50%;     
+      animation: ball-ani 2s linear infinite;
+    }
+    .ball:hover{animation-play-state: paused;}
+
+    @keyframes colorbox-ani{
+      0%{
+        background-color:crimson;
+        width: 140px;
+        height: 120px;
+      }
+      25%{
+        background-color:yellowgreen;
+        width: 450px;
+        height: 120px;
+      }
+      50%{
+        background-color:royalblue;
+        width: 450px;
+        height: 180px;
+      }
+      75%{
+        background-color:brown;
+        width: 140px;
+        height: 180px;
+      }
+      100%{
+        background-color:gold;
+        width: 140px;
+        height: 120px;
+      }
+    }
+    .colorbox{
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      background-color: #fff000;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      animation: colorbox-ani 5s infinite;
+    }
+
+    @keyframes anibox1{
+      from{width:0px;height:0px;}
+      to{width:150px;height:150px;}
+    }
+    @keyframes anibox2{
+      0%{width:0px;height:0px;}
+      25%{width:150px;height:150px;}
+      50%{width:100px;height:100px;}
+      75%{width:200px;height:200px;}
+      100%{width:150px;height:150px;}
+    }
+    .delay{
+      margin-top: 100px;
+      width: 500px;
+      height: 300px;
+      border: 5px solid #000;
+    }
+    .box1{
+      display: inline-block;
+      background-color: orange;
+      animation: anibox1 3s infinite;
+    }
+    .box2{
+      display: inline-block;
+      background-color: red;
+      animation: anibox2 3s infinite;
+      animation-delay: 3s;  /* 지연시간 */
+    }
+    /* transform, animation 속성은 inline형식의 태그에는 적용되지 않음*/
   </style>
 </head>
 <body>

@@ -4,7 +4,26 @@
   <meta charset="UTF-8">
   <title>21-filter속성</title>
   <style>
+    ul li{
+      display: inline-block;
+      list-style-type: none;
+      width: 400px;
+      height: 250px;
+    }
+    ul li img{width: 100%;}
 
+    /* 여러가지 필터효과 */
+    .f1{filter:grayscale(100%);}  /* 흑백효과 */
+    .f2{filter:blur(35px);}  /*흐림효과*/
+    .f3{filter:brightness(200%);}  /*밝게*/
+    .f4{filter:contrast(200%);} /*색상대비*/
+    .f5{filter:drop-shadow(8px 8px 10px gray);} /*그림자효과*/
+    .f6{filter:hue-rotate(90deg);} /*색상보정 */
+    .f7{filter:invert(100%);}  /*색상반전*/
+    .f8{filter:opacity(30%);}   /*불투명도*/
+    .f9{filter:saturate(800%);}   /*채도*/
+    .f10{filter:sepia(100%);}  /*낡은느낌효과*/
+    .f11{filter:contrast(200%) brightness(150%);}  /*여러개 필터적용*/  
   </style>
 </head>
 <body>
