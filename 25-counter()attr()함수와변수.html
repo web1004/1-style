@@ -4,7 +4,125 @@
   <meta charset="UTF-8">
   <title>25-counter()attr()함수와변수</title>
   <style>
+    /* counter() :카운터함수로 표시할 순번 변수값을 계산
+    counter-reset : 카운터 변수를 정의 및 초기화(부모요소에 사용)
+    counter-increment : 카운터 변수의 증가 단위를 설정(자식요소에 사용)    
+    */
 
+    section{counter-reset: num;} /* (1)부모에 counter함수를 사용할 변수를 지정 */
+    section div:before{ 
+      content: counter(num) " - "; /* (2)자식의 가상클래스에 counter()함수사용 */
+      counter-increment: num;  /* (3)카운터 변수의 증가단위 설정 */
+    }
+
+    .list{
+      list-style-type: none;
+      padding: 0;
+    }
+    .list.count1{counter-reset: best;}
+    .list.count1 li:before{
+      content: "Best Program 0" counter(best) "-";
+      counter-increment: best;
+      color: red;
+    }
+
+    .list.count2{counter-reset: item;}
+    .list.count2 li:before{
+      content: counter(item);
+      counter-increment: item;
+      background-color: royalblue;
+      color: #fff;
+      display: inline-block;
+      width: 15px;
+      font-size: 12px;
+      border-radius: 2px;
+      text-align: center;
+      margin-right: 5px;
+    }
+    .list.count2 li.active:before{background-color: crimson;}
+
+    .items{
+      list-style-type: none;
+      padding: 0;
+      line-height: 20px;
+      counter-reset: items;
+    }
+    .items li:before{
+      content: "3." counter(items);
+      counter-increment: items;
+      background-color: yellowgreen;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0 3px;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+
+    /* data속성과 attr()함수 */
+    .list1, .list2{list-style-type: none;}
+    .list1 li:before{
+      content: attr(data-icon);
+      margin-right: 5px;
+    }
+
+    .list2{counter-reset: numm;}
+    .list2 li:before{
+      content: "No." counter(numm);
+      counter-increment: numm;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      background-color: crimson;
+      color: #fff;
+      text-align: center;
+      font-size: 13px;
+      margin-right: 10px;
+    }
+
+    /* 변수(variables) 설정  
+    :root { --변수명: 값; }
+    ex) :root { --focusColor: crimson; }
+    
+    변수 사용 
+    selector { 속성: var(변수명) }
+    ex) .heading { color: var(--focusColor); }
+    
+    *대소문자 구분함 ex) focusColor ≠ focuscolor
+    *특수문자 사용할 경우 - 또는 _ 사용 ex) focus-color, focus_color
+    */
+
+    /* (1)사용할 변수선언 */
+    :root{
+      /* 변수명 : 값; */
+      --primary: skyblue;
+      --secondary: black;
+      --positive: yellowgreen;
+      --nagative: crimson;
+      --headingFontSize: 32px;
+      --headingFontColor: dodgerblue;
+      --headingTextAlign: center;
+      --mainWidth: 1280px;
+      --mainColor: #333;
+    }
+
+    .frame .btn{
+      border: none;
+      padding: 5px 20px;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .frame .btn.primary{background-color: var(--primary);}
+    .frame .btn.secondary{background-color: var(--secondary);}
+    .frame .btn.positive{background-color: var(--positive);}
+    .frame .btn.nagative{background-color: var(--nagative);}
+
+    .heading{
+      margin-top: 100px;
+      font-size: var(--headingFontSize);
+      color: var(--headingFontColor);
+      text-align: var(--headingTextAlign);
+    }
   </style>
 </head>
 <body>
@@ -65,6 +183,7 @@
     <li>Vote for your May Goal of the Month!</li>
     <li>Pick your favourite now!</li>
   </ul>
+  <hr>
 
   <!-- 변수 -->
   <div class="frame">
@@ -80,3 +199,7 @@
   
 </body>
 </html>
+
+<!-- 
+
+-->

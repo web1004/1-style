@@ -116,6 +116,44 @@
       position: sticky;
       top: 0;
     }
+
+    /* 부모요소내부외부에배치 */
+    .parent{
+      width: 600px;
+      height: 400px;
+      border: 5px solid #000;
+      margin: 200px auto;
+      position: relative;
+    }
+    .parent div[class*=inside]{ /* inside1~inside5 클래스 모두 선택*/
+      background-color: gold;
+      width: 200px;
+      height: 100px;
+      position: absolute;
+    }
+    .parent div[class*=outside]{ /* outside1~outside8 클래스 모두 선택*/
+      background-color: rgb(212, 18, 187);
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      color: #fff;
+    }
+
+    .inside1{top: 0;left: 0;}
+    .inside2{top: 0;right: 0;}
+    .inside3{bottom: 0;left: 0;}
+    .inside4{bottom: 0;right: 0;}
+    .inside5{top: 50%;left: 50%;transform: translate(-50%,-50%);}
+
+    .outside1{top: 0;right: 100%;}
+    .outside2{bottom: 100%;left: 0;}
+    .outside3{bottom: 100%;right: 0;}
+    .outside4{top: 0; left: 100%;}
+    .outside5{bottom: 0;left: 100%;}
+    .outside6{top: 100%;right: 0;}
+    .outside7{top: 100%;left: 0;}
+    .outside8{bottom: 0;right: 100%;}
+
   </style>
 </head>
 <body>
@@ -157,6 +195,24 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolores, totam, alias omnis iste, incidunt quidem exercitationem libero mollitia cumque aliquid quasi quos aperiam dignissimos iure harum minus sint optio beatae nostrum ullam cum maxime et. Nisi dolore aperiam mollitia veniam fuga, ducimus voluptatem ab esse? Ullam architecto, blanditiis ea quos eligendi explicabo minima deleniti, illum doloribus error voluptatum aliquid. Dolorum esse similique accusamus quos, in iste ut, distinctio itaque aspernatur quam temporibus necessitatibus quibusdam ex odit, ullam a velit at nulla quasi dolore placeat maxime odio sequi! Eveniet, accusantium labore! Quaerat, natus recusandae facere neque eum dolores deserunt commodi?
     </p>
   </div>
+  <hr>
+
+  <div class="parent">
+    <div class="inside1">inside1</div>
+    <div class="inside2">inside2</div>
+    <div class="inside3">inside3</div>
+    <div class="inside4">inside4</div>
+    <div class="inside5">inside5</div>
+    <div class="outside1">outside1</div>
+    <div class="outside2">outside2</div>
+    <div class="outside3">outside3</div>
+    <div class="outside4">outside4</div>
+    <div class="outside5">outside5</div>
+    <div class="outside6">outside6</div>
+    <div class="outside7">outside7</div>
+    <div class="outside8">outside8</div>
+  </div>
+
 
 </body>
 </html>

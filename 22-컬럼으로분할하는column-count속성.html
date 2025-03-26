@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <title>22-컬럼으로분할하는column-count속성</title>
   <style>
-
+    div{
+      line-height: 28px;
+      column-count: 3;
+      /* column-width: 200px; ->column-count와 중복사용할수 없음*/
+      /* column-rule-style: solid;
+      column-rule-width: 3px;
+      column-rule-color: crimson */
+      column-rule: 3px solid crimson;
+      column-gap: 40px;
+    }
+    div h1{
+      column-span: all;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
