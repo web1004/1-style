@@ -11,14 +11,25 @@
       font-weight: 400;
       color: #555;
     }
-    h1{}
+    h1{
+      border-left: 10px solid red;
+      padding-left: 10px;
+    }
 
     /* 기본하이퍼링크 */
-    /* a:link, ->하이퍼링크가 걸린상태
+    /* a태그의 여러상태종류 
+    a:link, ->하이퍼링크가 걸린상태
     a:visited, ->한번 누른적이 있는 상태
     a:active, ->누르고 있는 동안상태
     a:hover ->마우스오버 상태
-    {text-decoration: none;}  */
+    */
+
+    /* a:link,
+    a:visited,
+    a:active,
+    a:hover{
+      text-decoration: none;
+    } */
 
     a{ /*하이퍼링크의 모든 상태를 말함(:link,:visited,:active,:hover) */
       text-decoration: none;
@@ -35,7 +46,7 @@
     /* 클래스별 하이퍼링크 설정 */
     .link1{
       color: orange;
-      padding: 2px 5px;   /*오버시에 옆글자가 밀리지 않게 하기 위해 오버전에 미리 설정함*/
+      padding: 2px 5px; /*오버시에 옆글자가 밀리지 않게 하기 위해 오버전에 미리 설정함*/
     }
     .link1:hover{
       background-color: brown;
@@ -47,7 +58,7 @@
     .link2:hover{
       color: green;
       /* text-decoration: underline; ->이 속성은 별도의 색상이나 여백,굵기 등을 지정할수 없음*/
-      border-bottom: 3px solid yellowgreen;;
+      border-bottom: 3px solid yellowgreen;
       padding-bottom: 5px;
     }
 
@@ -64,14 +75,14 @@
       /* border: 1px solid #000; */
       text-align: center;
       margin-top: 200px;
+      /* padding-top: 200px; */
     }
     .link4 a{
-      color: #999;
       font-size: 14px;
-      font-weight: normal;  /* normal : 공통으로 설정한 굵기 500을 해제(일반굵기로 변경) */
-      /* text-align: center; inline 태그라서 적용되지않음->*/
-      /* margin-top: 200px; ->inline 태그라서 (마진상하)적용되지않음*/
+      color: #999;
+      font-weight: normal; /* normal : 공통으로 설정한 굵기 500을 해제(일반굵기로 변경) */
     }
+    /* a태그는 부모에 글자색을 넣어도 적용이 되지않고 반드시 a태그에 적용을 헤야 함 */
   </style>
 </head>
 <body>

@@ -12,7 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-blend-mode: hard-light; 
+      background-blend-mode: hard-light;
     }
     .logo-bg img{mix-blend-mode: multiply;}
     /* 요소의 컨텐츠가 해당요소의 부모 콘텐츠 및 요소의 배경와 어떻게 혼합되는지
@@ -30,20 +30,20 @@
       background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      /* 신규속성으로 브라우저에 적용이 안되므로 접두사를  붙여야 함 
-      -webkit- : 크롬브라우저 접두사
-      */
     }
+    /* 신규속성으로 브라우저에 적용이 안되므로 접두사를  붙여야 함 
+      -webkit- : 크롬,사파리 브라우저 접두사
+    */
     .backgroundclip{
       font-size: 170px;
       font-weight: 700;
       text-transform: uppercase; 
       text-align: center;
-      background-image: url(image/crop.jpg);  /* 글자에 넣을 배경 이미지 */
+      background-image: url(image/crop.jpg);  
       background-repeat: no-repeat;
       background-size: 120% cover;
       background-position: center;
-      background-clip: text; /* background-clip->대상을 텍스트로 지정한다 */ 
+      background-clip: text;  /* background-clip->대상을 텍스트로 지정한다 */ 
       color: rgba(0,0,0,0);  /* 텍스트 색상을 투명으로 한다 */
     }
 
@@ -58,7 +58,6 @@
     .bg-blend{
       width: 300px;
       height: 300px;
-      /* background: url("image/blueheart.png"), url("image/blush.png");  */
       background: url("image/blush.png") pink;
       background-blend-mode: screen;
     }
@@ -72,13 +71,13 @@
       position: relative;
     }
     .frame div{
-      border: 2px solid #fff;
-      width: 400px;
-      height: 400px;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%,-50%);
+      border: 2px solid #fff;
+      width: 400px;
+      height: 400px;
       backdrop-filter: blur(5px);
     }
   </style>
@@ -88,7 +87,7 @@
   <h1>01.mix-blend-mode, background-blend-mode : 혼합모드 적용하는 속성</h1>
   <div class="logo-bg">
     <img src="image/coffee-logo-white.png" alt="">
-    <!--<img src="image/coffee-logo-color.png" alt="">  ->배경색이 있는 경우는 투과되지않음-->
+    <!-- <img src="image/coffee-logo-color.png" alt="">  --> <!--배경색이 있는 경우는 투과되지않음-->
   </div>
   <hr>
 

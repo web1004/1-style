@@ -32,7 +32,7 @@
       border: 1px solid green;
       width: 600px;
       text-align: center;
-      margin: auto;  
+      margin: auto;
       /* 요소(자식을 품고 있는 부모)의 수평가운데 정렬-가로너비가 있어야 적용됨(가로100%는 적용되지않음) 
       *marign: 200px auto; ->상하 마진 200px이고, 좌우는 auto 가운데정렬
       *marign: 50px auto 20px; ->상 마진 50px이고, 좌우는 auto 가운데정렬, 하 마진 20px
@@ -52,10 +52,10 @@
     .dis2 button{
       border: 1px solid red;
       width: 400px;
-      margin: 30px auto;
+      margin: 50px auto
     }
 
-    /* 03 inline 또는 inline-block요소를 중앙정렬하려면 block요소의 부모에 "text-align:center" 속성으로 적용함*/
+    /* 03 */
     .dis3{
       border: 1px solid #000;
       text-align: center;
@@ -66,12 +66,7 @@
     .dis4 span{background-color: yellowgreen;}
     .dis4 button{background-color: royalblue}
 
-    /* 05 요소를 보이지 않게 하는 3가지 방법
-    (1)display:none;
-    (2)visibility:hidden; (보이게 하는건 visibility: visible; )
-    (3)opacity:0;   
-    */
-
+    /* 05 */
     .dis5 div{
       width: 200px;
       height: 300px;
@@ -79,7 +74,7 @@
       font-weight: bold;
       color: #fff;
       text-align: center;
-      /* vertical-align: middle;  ->적용되지않음*/
+      /* vertical-align: middle;  ->적용되지않음*/ 
       line-height: 300px;
       display: inline-block; /* 가로배열이 가능하지만 오른쪽에 5px정도의 기본여백이 생김 */
       /* float: left; */
@@ -89,21 +84,20 @@
     .dis5 .child2{
       background-color: yellowgreen;
       /* display: none; */  /* 공간도 없고 존재도 하지 않기 때문에 커서포인터를 줄수 없음 */
-      /* visibility:hidden; */  /*공간은 있지만 존재 자체는 사라지기 때문에 커서포인터를 줄수 없음 */
-      opacity:0; /*공간도 있고 존재 자체도 있고 보이지만 않을뿐이므로 커서포인터를 줄수 있음 */
+      /* visibility:hidden; */  /*공간은 있지만 존재 자체는 사라지기 때문에 커서포인터를 줄수 없음 */ 
+      opacity: 0; /*공간도 있고 존재 자체도 있고 보이지만 않을뿐이므로 커서포인터를 줄수 있음 */
     }
     .dis5 .child3{background-color: gray;}
 
     /* 06 float속성(left/right) 
     자식이 모두 float를 적용하면 부모가 높이를 인식하지 못하는 문제 발생
     ->해결:folat를 적용한 자식의 부모에게 "overflow:hidden;"을 적용함*/
-    
     #boxs{
       width: 500px;
       border: 5px solid #333;
       text-align: center;
       padding: 10px;
-      overflow: hidden;  /* float문제 해결 */
+      overflow: hidden; /* float문제 해결 */
     }
     .box1, .box2{
       width: 100px;

@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>3-텍스트스타일</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
   <style>
     .ts1{font-family:맑은고딕,돋움,굴림;}
     .ts2{font-family:"바탕체","굴림체";}
@@ -25,28 +24,32 @@
       font-style: italic;
       font-weight: bold;
     } */
-    /* 축약시 */
-    .ts10{font:italic bold 36px 궁서체;}
+
+
+    /* .ts10{font: 궁서체 36px italic bold;} -> 순서가 맞지않아서 적용되지 않음*/
     /*
       폰트관련명령어들을 축약시에는 명령어의 순서를 반드시 지켜야 함!
       폰트축약순서:스타일->사이즈->글꼴(글자크기와 글꼴은 반드시 있어야 함)
     */
+    /* 축약시 */
+    .ts10{font: italic bold 36px 궁서체;}
 
     .wf1{
-      font-family: "Playwrite IT Moderna", cursive;
-      font-size: 36px;
-      color: blueviolet;
+      font-family: "Edu NSW ACT Cursive", cursive;
+      font-size: 32px;
+      color: purple;
+      font-weight: 700;
     }
     @font-face {
-      font-family: 'Ownglyph_corncorn-Rg';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+      font-family: 'YeongwolTTF-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2507-2@1.0/YeongwolTTF-Regular.woff2') format('woff2');
       font-weight: normal;
       font-style: normal;
     }
     .wf2{
-      font-family: 'Ownglyph_corncorn-Rg';
-      font-size: 42px;
-      color: crimson;
+      font-family: 'YeongwolTTF-Regular';
+      font-size: 40px;
+      color: green;
     }
     .wf3{}
     .wf4{}
@@ -58,14 +61,13 @@
     }     
     */
     @font-face {
-      font-family:'seoulHB';  /* 폰트이름은 직접 만들어줄수 있음 */
+      font-family:'seoulHB'; /* 폰트이름은 직접 만들어줄수 있음 */
       src:url('font/seoulHB.woff') format('woff');
     }
-
     .wf5{
       font-family:'seoulHB';
-      font-size: 48px;
-      color: green;
+      font-size: 46px;
+      color: crimson;
     }
 
     /*text-align속성은 block형식의 태그에만 적용할 수 있다*/
@@ -79,7 +81,7 @@
     .ts13{vertical-align:bottom;}
 
     .heading{
-      text-decoration-style: wavy;  /* solid, wavy, double */ 
+      text-decoration-style: wavy;   /* solid, wavy, double */ 
       text-decoration-color: crimson;
       text-decoration-line: underline;
       text-decoration-thickness: 5px;
@@ -90,15 +92,16 @@
     .ts14{text-decoration:underline;}
     .ts15{text-decoration:line-through;}
     .ts16{text-decoration:overline;}
-    a{text-decoration: none;color: brown;}
+    a{text-decoration: none;color: crimson;}
 
     .ts17{
       text-indent: 100px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       word-spacing: 10px;
-      line-height: 30px;
+      /* line-height: 30px; */
+      line-height: 2.5;  /* 글자크기의 배율로 2.5배 */
     }
-    .ts18{text-indent: 100px;} /* block태그에만 적용됨 */
+    .ts18{text-indent: 100px;} /* block태그에만 적용됨->span태그는 inline으로 적용되지않음 */
 
     .ts19{text-transform:none;}
     .ts20{text-transform:capitalize;} /* 첫글자만 대문자로(많이 사용) */
@@ -123,22 +126,33 @@
       background-color: yellow;
       width: 500px;
     }
-    .single-line p{  /* 한줄일때만 가능 */
-      white-space: nowrap;  /* 줄바꿈을 하지 않음 */
+    /* 한줄일때만 적용가능 */
+    .single-line p{
+      white-space: nowrap; /* 줄바꿈을 하지 않음 */
       overflow: hidden;  /* 넘치는 자식 숨기기 */
+
+      /* 콘텐츠가 길었을때 어떻게 표시되는지 설정(잘리거나, 생략부호(...) 표시 */
       text-overflow: ellipsis;
+      /* text-overflow: clip; */
     }
 
     /* 소스최적화방법(1)-그룹핑 */
-    .box1, .box2, .box3, .box4, .box5{
+    /* .box1, .box2, .box3, .box4, .box5{
+      width: 300px;
+      height: 200px;
+    } */
+
+    /* 소스최적화방법(2)-공통클래스(.box)와 각각의 클래스(.box1~.box5)를 만들어서 적용 */
+    .box{
       width: 300px;
       height: 200px;
     }
-    .box1{background: #6f11bd;}
-    .box2{background-color: rgb(11, 168, 155);}
-    .box3{background-color: rgba(11, 168, 155, 0.5);} /* 0.5(0~1) -> 불투명도 50% */
-    .box4{background-color: hsl(29, 93%, 27%);}
-    .box5{background-color: hsla(29, 93%, 27%, 0.3);}
+
+    .box1{background-color: #0bc996;}
+    .box2{background-color: rgb(11, 103, 201);}
+    .box3{background-color: rgba(11, 103, 201, 0.5);} /* 0.5(0~1) -> 불투명도 50% */
+    .box4{background-color: hsl(284, 90%, 42%);}
+    .box5{background-color: hsla(284, 90%, 42%, 0.5);}   
   </style>
 </head>
 <body>
@@ -179,7 +193,7 @@
   <h1>웹폰트 사용하기</h1>
   <!--(1-1)CDN방식:무료구글주소를 연결하여 적용하는 방법-->
   <p class="wf1">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur sunt eaque nam itaque impedit, ducimus asperiores sequi voluptatum sed.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus saepe deleniti facere qui quas omnis rerum maiores cupiditate aperiam deserunt.
   </p>
 
   <!--(1-2)CDN방식:눈누폰트 연결하여 적용하는 방법-->
@@ -254,32 +268,25 @@
     <h2>Single Line</h2>
     <p>
       행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다. 국회의원의 수는 법률로 정하되, 200인 이상으로 한다. 이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다.
-    </p>
+    </p>    
   </div>
   <hr>
 
   <h1>색상 표현하는 방법</h1>
+  <!-- 소스최적화 방법(1)
   <div class="box1">#6자리숫자</div>  
   <div class="box2">rgb</div>
   <div class="box3">rgba</div>  
   <div class="box4">hsl</div>
-  <div class="box5">hsla</div>
+  <div class="box5">hsla</div> 
+  -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- 소스최적화 방법(2) -->
+  <div class="box box1">#6자리숫자</div>  
+  <div class="box box2">rgb</div>
+  <div class="box box3">rgba</div>  
+  <div class="box box4">hsl</div>
+  <div class="box box5">hsla</div>
 
 </body>
 </html>

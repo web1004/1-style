@@ -13,15 +13,14 @@
       border-width: 20px;
       border-color: red;
       margin: 100px;  /* 바깥여백 */
-      padding: 50px;  /* 안쪽여백(크기가 변화됨) */
+      padding: 50px;  /* 안쪽여백(크기가 변경됨) */
     }
     .box2{
       background-color: aqua;
-      padding-left: 50px;
       margin-left: 50px;
+      padding-left: 50px;
     }
 
-    /* 소스최적화 방법1-그룹핑 */
     .mbox1, .mbox2, .mbox3{
       width: 200px;
       height: 100px;
@@ -36,15 +35,13 @@
     }
     .mbox3{
       background-color: green;
-      margin-top: 50px;   /* 20px과 50px이 겹쳐지면 큰쪽인 50px이 적용됨 */
+      margin-top: 50px; /* 20px과 50px이 겹쳐지면 큰쪽인 50px이 적용됨 */
     }
     /* 박스요소의 margin속성 사용시 주의할점!!
     세로로 배치할 경우 마진과 마진이 만날때 마진값이 큰쪽으로 겹쳐지는 현상이다.
     이런 현상을 마진중첩(margin overlap), 또는 마진상쇄(margin collapse)라고 한다. 
     */
 
-
-    /* 소스최적화 방법2-공통클래스명과 각 개별 클래스 2개를 적용 */
     .boxin{
       width: 600px;
       border-width: 10px;
@@ -61,7 +58,7 @@
     .bs7{border-style: groove;}
     .bs8{border-style: inset;}
     .bs9{border-style: outset;}
-
+    
     h1{
       /* border-style: solid;
       border-width: 10px;
@@ -74,7 +71,7 @@
       padding-left: 0;
       padding-right: 0; */
 
-      padding: 20px 0;
+      padding: 20px 0;  /* 상하, 좌우 */
     }
     h2{
       width: 800px;
@@ -96,8 +93,9 @@
       /* border-width: 10px; ->값이 1개일때는 상,하,좌,우 동일*/
       /* border-width: 10px 20px; ->값이 2개일때는 상하,좌우*/
       /* border-width: 3px 10px 30px; ->값이 3개일때는 상,좌우,하 */
-      border-width: 10px 30px 20px 5px; /* 값이 4개일때는 상,우,하,좌 */
+      border-width: 10px 30px 20px 5px;  /* 값이 4개일때는 상,우,하,좌 */
     }
+    /* 문제: 데시선, 블루, 상하 10px/좌우 0, 안쪽여백 상하 20px/좌우 10px */
     h3{
       /* border-style: dashed;
       border-color: blue;
@@ -114,6 +112,8 @@
       border-width: 10px 0;
       padding: 20px 10px;
     }
+
+    /* 문제 : 점선, 상10px/좌우 0/하 5px, 상 핑크/하 보라/좌우 투명(transparent), 안쪽여백 10px */
     p{
       /* border-style: dotted;
       border-top-width: 10px;
@@ -123,10 +123,11 @@
       border-top-color: pink;
       border-bottom-color: purple;
       border-left-color: transparent;
-      border-right-color: transparent; */
+      border-right-color: transparent;
+      padding: 10px; */
 
       border-style: dotted;
-      border-width:10px 0 5px;
+      border-width: 10px 0 5px;
       border-color: pink transparent purple; 
       padding: 10px;
     }

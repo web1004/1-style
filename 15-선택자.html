@@ -56,11 +56,11 @@
     }
     .box:after{
       content: 'box의 맨뒤에 문장을 삽입합니다.';
+      color: #fff;
       width: 300px;
       height: 50px;
       background-color: #000;
-      color: #fff;
-      display: inline-block;
+      display: block;
     }
     .box p{border-bottom: 1px dashed #000;}
     .box p:first-letter{  /* 첫번째 글자 */
@@ -80,11 +80,6 @@
     .frame .greeting:first-letter{
       color: red;
       font-size: 40px;
-      float: left;
-      /* vertical-align: bottom; ->적용되지않음 */
-      line-height: 1;
-      /* line-height는 px단위도 사용하고 1,2.5 같은 숫자로 글꼴 크기의 배수를 입력할수 있음
-      줄간격을 줄여서 오른쪽 텍스트와 수직정렬을 맞춤 */
     }
 
     /* (7)동위선택자 */
@@ -104,8 +99,8 @@
     .frame1 h1[class=text]{color: red;}  /* 클래스 이름이 "text" 와 동일한것 */
     .frame1 [class*=text]{color: green;}  /* 클래스 이름중에 "text"가 포함된것 */
 
-    /* (9)not 선택자*/
-    #select9 p:not(.active){ /* active클래스를 제외한 나머지 p에 적용 */
+    /* (9)not 선택자 */
+    #select9 p:not(.active){  /* active클래스를 제외한 나머지 p에 적용 */
       font-size: 32px;
       color: red;
     }
@@ -138,7 +133,7 @@
     /* 11번째부터 ~ */
     #select10 ul li:nth-child(n+11){
       color: blue;
-      background-color: skyblue;
+      background-color: skyblue;    
     }
   </style>
 </head>
@@ -197,11 +192,9 @@
 
   <h1>(5)가상클래스</h1>
   <div class="box">
-    <!-- .box:before -->
     <p>COMPANY</p>
     <p>PRODUCT</p>
     <p>SERVICE</p>
-    <!-- .box:after -->
   </div>
   <hr> 
 

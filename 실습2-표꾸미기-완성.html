@@ -10,22 +10,19 @@
       font-size:15px;
       color: #666;
     }
-
     caption{
       color: #1b4489;
       font-size: 20px;
       font-weight: 800;
       text-align: left;
-      margin: 50px 0 5px 0;
-    }
+      margin: 50px 0 5px 0; /* 값이 4개면 상,우,하,좌 */
+    }    
     caption:nth-of-type(2){
       caption-side:bottom;
       font-size: 13px;
-      color: #666;
-      /* margin-top: 10px;
-      margin-left: 10px; */
-      margin: 10px 0 0 10px;  /* 값이 4개면 상,우,하,좌 */
+      color: #666;  
       font-weight: 300;
+      margin: 10px 0 0 10px;  /* 값이 4개면 상,우,하,좌 */   
     }
 
     table{
@@ -33,20 +30,19 @@
       margin: auto;
       border-collapse:collapse;
       text-align: center;
-      table-layout:fixed;
-    }    
-    table thead>tr:first-child{border-top: 3px solid #275faa;}  /* 자손선택자 */
-    thead{
-      color: #254f93;
-      background: #e9f1fb;
-      font-weight: 500;
     }
     table td{
       border: 1px solid #ccc;
       padding: 15px;
     }
+    table thead{
+      color: #254f93;
+      background: #e9f1fb;
+      font-weight: 500;
+    }
+    table thead tr:first-child{border-top: 3px solid #275faa;} 
     table tr>td:first-child{border-left: none;}
-    table tr>:last-child{border-right: none;}   
+    table tr>td:last-child{border-right: none;}     
   </style>
 </head>
 <body>

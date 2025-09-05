@@ -29,9 +29,9 @@
     /* body{
       background: url(image/crop.jpg) no-repeat center center;
       background-size: cover;
-
-      축약시-> background: url(image/crop.jpg) no-repeat center/cover;
     } */
+
+    /* body{background: url(image/crop.jpg) no-repeat center/cover;} */
 
     /* background-size:배경으로 넣은 이미지의 사이즈를 조정
     contain: 이미지를 자르거나 늘리지않고 컨테이너 내에서 이미지 크기를 최대한 조정
@@ -63,8 +63,10 @@
       height: 400px;
       margin: 10px;
     }
+
     /* 배경이미지+배경색 */
     .back2 .bg6{background: url(image/logo2.png) no-repeat right bottom/100px gold;}
+
     /* 배경이미지+배경이미지 */
     .back2 .bg7{
       background-image: url(image/bg.png), url(image/heart.png);
@@ -72,31 +74,33 @@
       background-position: center, right top;
       background-size: auto, 100px;
     }
+
     /* 배경이미지+배경그레디언트 */
     .back2 .bg8{
       background: url(image/logo2.png) no-repeat center,
       linear-gradient(to right, #0fd850 0%, #f9f047 100%);
     }
 
-
     /* 불투명도 */
-    body{background: url(image/bg-img1.png);}
+    body{background-image: url(image/bg-img1.png);}
+
     table{
       width: 300px;
       height: 300px;
       border: 3px solid #000;
-      text-align: center;
       font-size: 32px;
       font-weight: bold;
+      text-align: center;
       color: #fff;
       /* background-color: #000;
       opacity: 0.5; 
       ->위의 방법으로 불투명도를 사용하게 되면 배경이외에 안의 텍스트도 같이 불투명해진다.->해결방법:rgba를 사용한다.
       */
+      /* background-color: rgba(0,0,0,0.5); */
       background: rgba(0,0,0,0.5);
     }
-    table td{border: 1px dotted #666;}
-  </style>
+    table td{border: 1px dashed #666;}
+  </style>  
 </head>
 <body>
   

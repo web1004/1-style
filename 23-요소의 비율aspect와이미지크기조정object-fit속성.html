@@ -4,51 +4,41 @@
   <meta charset="UTF-8">
   <title>23-요소의 비율aspect와이미지크기조정object-fit속성</title>
   <style>
-    /* (1)css속성으로 배경으로 이미지는 넣는 방법 */
+    /* (1) css속성으로 배경으로 이미지는 넣는 방법->가로,세로크기가 있어야 함*/
     .frame1{
       border: 2px solid #000;
       width: 400px;
       height: 400px;
       background: url(image/country.jpg) no-repeat left center;
-      background-size: cover; /* 이미지를 배경으로 넣을때 배경의 사이즈를 조정할때 사용하는 속성 */
+      background-size: cover;
     }
+
     /* (2)img태그로 이미지를 넣는 방법 */
     .frame2{
       border: 2px solid #000;
       width: 400px;
       height: 400px;
     }
-    .frame2 img{  /*img태그로 이미지를 삽입할때는 이미지에 직접 속성적용 */
+    .frame2 img{
+      /* width: 100%;
+      height: 100%; */
       width: inherit;
       height: inherit;
       object-fit: cover;
       object-position: left;
     }
-    /* object-fit속성 : 컨테이너 안에 맞게 <img> 또는 <vedio>크기를 조정하는 방법을 지정할때 사용함
+    /* object-fit속성 : 컨테이너(부모) 안에 맞게 <img> 또는 <vedio>크기를 조정하는 방법을 지정할때 사용함
     object-fit 과 object-position으로 img를 배경처럼 사용가능
     반드시 부모요소에 가로세로 크기가 있어야 하고, 자식인 img는 부모의 크기를 받아와야 함(inherit, 100%)
     */
-    .frame3, .frame4, .frame5{
-      border: 2px solid;
-			width: 400px;
-			height: 400px;
-    }
-    .frame3 img,
-    .frame4 img,
-    .frame5 img{
-      width: inherit;
-      height: inherit;
-      object-fit: cover;
-      mask-image: url(image/heart.png);
-      mask-size: 350px;
-      mask-repeat: no-repeat;
-      mask-position: center;
-    }
-    .frame4 img{mask-image: url(image/blush.png);}
-    .frame5 img{mask-image: url(image/logo.png);}
-    /* mask-image는 서버환경에서만 적용이 되어서 탐색기에서 파일을 더블클릭해서 보면 보이지 않음 */
+
+    /* mask-image */
 
 
+
+
+
+    /* 이미지의 비율 */
     .frame6 div{
       border: 5px solid;
 			margin: 10px;
@@ -75,9 +65,9 @@
 <body>
   
   <h1> 컨테이너 안에 맞게 <img> 크기 조정: object-fit </h1>
-  <div class="frame1"></div>
+  <div class="frame1"></div>  <!-- (1)css속성으로 배경으로 이미지는 넣는 방법 -->
   <div class="frame2">
-    <img src="image/country.jpg" alt="">
+    <img src="image/country.jpg" alt="">  <!-- (2)img태그로 이미지를 넣는 방법 -->
   </div>
   <hr>
 
