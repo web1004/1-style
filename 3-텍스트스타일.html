@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>3-텍스트스타일</title>
-  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap" rel="stylesheet">
   <style>
-    .ts1{font-family:맑은고딕,돋움,굴림;}
+    .ts1{font-family:맑은고딕,돋움,굴림;}  /* 맑은고딕이 없을 경우 돋움 -> 1순위,2순위,3순위 */
     .ts2{font-family:"바탕체","굴림체";}
     .ts3{font-family:궁서체;}
+    /* 
+    font-family는 시스템에 설치되어 있는 폰트만 사용할수 있음
+    그렇다면 모든 컴퓨터에서 동일하게 내가 설치한 폰트가 뜨려면 웹폰트를 사용해야 함  
+    */
 
     .ts4{font-style:italic;} /* 웹에서 주로 사용함 */
     .ts5{font-style:oblique;}
@@ -21,67 +25,71 @@
     /* .ts10{
       font-family: 궁서체;
       font-size: 36px;
-      font-style: italic;
-      font-weight: bold;
+      font-style:italic;
+      font-weight:bold;
+      color: red;
     } */
 
-
-    /* .ts10{font: 궁서체 36px italic bold;} -> 순서가 맞지않아서 적용되지 않음*/
-    /*
-      폰트관련명령어들을 축약시에는 명령어의 순서를 반드시 지켜야 함!
-      폰트축약순서:스타일->사이즈->글꼴(글자크기와 글꼴은 반드시 있어야 함)
+    /* .ts10{font: 궁서체 36px italic bold;color: red;} ->순서가 맞지 않아서 적용되지 않음*/
+    /* 
+      폰트관련 명령어들을 축약시에는 명령어의 순서를 반드시 지켜야 함!
+      폰트축약순서:스타일->사이즈->글꼴(글자크기와 글꼴은 반드시 있어야 함)   
     */
-    /* 축약시 */
-    .ts10{font: italic bold 36px 궁서체;}
+
+    /*축약시 */
+    .ts10{font: italic bold 36px 궁서체;color: red;}
 
     .wf1{
-      font-family: "Edu NSW ACT Cursive", cursive;
+      font-family: "Playwrite IE", cursive;
       font-size: 32px;
       color: purple;
-      font-weight: 700;
+      font-weight: 400;
     }
+
+    /* @font-face 코드는 화면에 노출되지 않으므로 삽입위치는 상관없음 */
     @font-face {
-      font-family: 'YeongwolTTF-Regular';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2507-2@1.0/YeongwolTTF-Regular.woff2') format('woff2');
+      font-family: 'Mulmaru';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/Mulmaru.woff2') format('woff2');
       font-weight: normal;
-      font-style: normal;
+      font-display: swap;
     }
     .wf2{
-      font-family: 'YeongwolTTF-Regular';
-      font-size: 40px;
+      font-family: 'Mulmaru';
+      font-size: 42px;
       color: green;
     }
+    /* .wf3, .wf4 클래스는 각자 영문,한글 웹 폰트를 찾아서 꾸며보기 */
     .wf3{}
     .wf4{}
 
-    /* 웹폰트 서버에 올려서 사용하는 방법(삽입위티상관없음)
+    /* 웹폰트를 서버에 올려서 사용하는 방법(삽입위치 상관없음)
     @font-face {
       font-family:'적용할폰트이름';
       src:url('폰트경로') format('폰트형식');
-    }     
+    }  
     */
-    @font-face {
-      font-family:'seoulHB'; /* 폰트이름은 직접 만들어줄수 있음 */
+    @font-face { 
+      font-family:'seoulHB';  /* 폰트이름은 직접 만들어줄수 있음 */
       src:url('font/seoulHB.woff') format('woff');
-    }
+    } 
     .wf5{
       font-family:'seoulHB';
-      font-size: 46px;
-      color: crimson;
+      font-size: 50px;
+      color: #0c8fcc;
     }
 
-    /*text-align속성은 block형식의 태그에만 적용할 수 있다*/
+    /* text-align속성은 block형식의 태그에만 적용할 수 있다 */
     .author{text-align: right;}
     .foot{text-align: center;}
-    .foot_t{text-align: right;} /* span태그는 inline태그로  text-align속성이 적용되지 않음*/
+    .foot_t{text-align: right;} /* span태그는 inline태그로  text-align속성이 적용되지 않음 */
 
-    /*vertical-align속성은 img,input,select,table의 th,td등에 적용할 수 있다*/
+    /* vertical-align속성은 img,input,select,table의 th,td등에 적용할 수 있다 */
     .ts11{vertical-align:top;}
     .ts12{vertical-align:middle;}
     .ts13{vertical-align:bottom;}
 
     .heading{
-      text-decoration-style: wavy;   /* solid, wavy, double */ 
+      text-decoration-style: wavy;  /* solid, wavy, double */ 
       text-decoration-color: crimson;
       text-decoration-line: underline;
       text-decoration-thickness: 5px;
@@ -99,9 +107,10 @@
       letter-spacing: 3px;
       word-spacing: 10px;
       /* line-height: 30px; */
-      line-height: 2.5;  /* 글자크기의 배율로 2.5배 */
+      line-height: 2.5; /* 글자크기의 배율로 2.5배 */
     }
-    .ts18{text-indent: 100px;} /* block태그에만 적용됨->span태그는 inline으로 적용되지않음 */
+    .ts18{text-indent: 100px;}
+    /* text-indent속성은 block태그에만 적용됨->span태그는 inline으로 적용되지않음 */
 
     .ts19{text-transform:none;}
     .ts20{text-transform:capitalize;} /* 첫글자만 대문자로(많이 사용) */
@@ -126,14 +135,13 @@
       background-color: yellow;
       width: 500px;
     }
-    /* 한줄일때만 적용가능 */
     .single-line p{
       white-space: nowrap; /* 줄바꿈을 하지 않음 */
       overflow: hidden;  /* 넘치는 자식 숨기기 */
 
       /* 콘텐츠가 길었을때 어떻게 표시되는지 설정(잘리거나, 생략부호(...) 표시 */
-      text-overflow: ellipsis;
-      /* text-overflow: clip; */
+      text-overflow: ellipsis; /* 생략부호(...) 표시  */
+      /* text-overflow: clip; ->잘림(사용하지 않고 overflow: hidden;속성을 사용함*/
     }
 
     /* 소스최적화방법(1)-그룹핑 */
@@ -148,11 +156,11 @@
       height: 200px;
     }
 
-    .box1{background-color: #0bc996;}
-    .box2{background-color: rgb(11, 103, 201);}
-    .box3{background-color: rgba(11, 103, 201, 0.5);} /* 0.5(0~1) -> 불투명도 50% */
-    .box4{background-color: hsl(284, 90%, 42%);}
-    .box5{background-color: hsla(284, 90%, 42%, 0.5);}   
+    .box1{background-color: #4108c5;}
+    .box2{background-color: rgb(185, 5, 20);}
+    .box3{background-color: rgba(185, 5, 20, 0.5);} /* 0.5(0~1) -> 불투명도 50% */
+    .box4{background-color: hsl(138, 97%, 24%);}
+    .box5{background-color: hsla(138, 97%, 24%, 0.5);}
   </style>
 </head>
 <body>
@@ -191,19 +199,18 @@
   <hr>
 
   <h1>웹폰트 사용하기</h1>
-  <!--(1-1)CDN방식:무료구글주소를 연결하여 적용하는 방법-->
+  <h2>(1)CDN을 이용하는 방법</h2>
   <p class="wf1">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus saepe deleniti facere qui quas omnis rerum maiores cupiditate aperiam deserunt.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur sunt eaque nam itaque impedit, ducimus asperiores sequi voluptatum sed.
   </p>
 
-  <!--(1-2)CDN방식:눈누폰트 연결하여 적용하는 방법-->
   <p class="wf2">
     누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 
   </p>
   <p class="wf3">webdesign &amp; webpublishing</p>
   <p class="wf4">웹디자이너&amp;웹퍼블리셔 홍길동</p>
 
-  <!--(2)서버에 직접 업로드 한후 적용하는 방법-->
+  <h2>(2)글꼴을 다운받아서 본인의 서버에 직접 올리는 방법</h2>
   <p class="wf5">
     형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.
   </p>
@@ -268,7 +275,7 @@
     <h2>Single Line</h2>
     <p>
       행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다. 국회의원의 수는 법률로 정하되, 200인 이상으로 한다. 이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다.
-    </p>    
+    </p>
   </div>
   <hr>
 
@@ -278,10 +285,9 @@
   <div class="box2">rgb</div>
   <div class="box3">rgba</div>  
   <div class="box4">hsl</div>
-  <div class="box5">hsla</div> 
-  -->
+  <div class="box5">hsla</div> -->
 
-  <!-- 소스최적화 방법(2) -->
+  <!-- 소스최적화 방법(2) 클래스를 2개(공통클래스와 각자 클래스) 만든다.-->
   <div class="box box1">#6자리숫자</div>  
   <div class="box box2">rgb</div>
   <div class="box box3">rgba</div>  

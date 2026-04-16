@@ -1,5 +1,8 @@
+@charset "utf-8"; 
 
-body{background-color: #ccc;}
-h2{background-color: #000;color: #fff;}
-h3{color: crimson;text-align: center;}
-p{color: royalblue;margin-left: 200px;}
+body{background-color:#ccc;}
+h2{background-color: #000;color:#fff;}
+h3{color: crimson;margin-left: 300px;}
+p{color: royalblue;text-align: center;}
+
+

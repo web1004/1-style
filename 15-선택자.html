@@ -8,6 +8,8 @@
     /* #select1 h1{color: red;} */  /* 후손선택자(공백한칸)-선택자 태그 아래에 위치한 모든 태그들 */
     #select1>h1{color: red;}  /* 자손선택자(>)-선택자 바로 한단계 아래(첫번째)에 위치한 태그(서열상의 첫번째) */
 
+    /* 보통은 후손선택자를 사용하고 범위를 좁히고 싶을때 자손선택자를 사용하면 된다. */
+
     /* (2)구조선택자-형태구조 */
     #select2 h1:first-of-type{color: purple;}
     #select2 h2:first-of-type{color: orange;}
@@ -34,11 +36,11 @@
     nth-child 일반구조선택자는 부모요소의 모든 자식요소를 대상으로 n번째 자식을 선택하고,
     nth-of-type 형태구조선택자는 부모요소의 특정 요소만을 대상으로 n번째 자식을 선택한다.
     */
-    #select4 p:nth-child(3){
+    #select4 p:nth-child(3){  /* 일반구조 -중간에 있는 span더 순서를 셈*/
       color: red;
       font-weight: bold;
     }
-    #select4 p:nth-of-type(3){
+    #select4 p:nth-of-type(3){   /* 형태구조 - p태그끼리만 순서를 셈*/
       color: blue;
       font-weight: bold;
     }
@@ -49,17 +51,17 @@
     .box:before{
       content: 'box의 맨앞에 문장을 삽입합니다.';
       color: green;
+      background-color: yellow;
       width: 300px;
       height: 50px;
-      background-color: yellow;
       display: inline-block;
     }
     .box:after{
       content: 'box의 맨뒤에 문장을 삽입합니다.';
       color: #fff;
+      background-color: #000;
       width: 300px;
       height: 50px;
-      background-color: #000;
       display: block;
     }
     .box p{border-bottom: 1px dashed #000;}
@@ -68,7 +70,7 @@
       color: red;
     }
 
-    /* (6) */
+    /* (6) :first-letter선택자->첫번째 글자만 선택*/
     .frame{
       width: 800px;
       background-color: #000;
@@ -87,32 +89,41 @@
     #select7 h1 ~ h2{background-color: yellow;} /* 형제선택자(tild) ->다음에 오는 요소 모두 선택*/
 
     /* (8)속성선택자 */
-    input{
+    input{  /* inline-block태그로 크기,높이가 적용됨 */
       border: 1px solid #ccc;
       width: 200px;
       height: 30px;
-      /* background-color: yellow; */
+      /* background-color: yellow; ->input의 type과 상관없이 모두 적용이 됨*/
     }
     input[type=text]{background-color: bisque;}
     input[type=password]{background-color: gold;}
 
-    .frame1 h1[class=text]{color: red;}  /* 클래스 이름이 "text" 와 동일한것 */
+    .frame1 h1[class=text]{color: red;} /* 클래스 이름이 "text"와 동일한것 */
     .frame1 [class*=text]{color: green;}  /* 클래스 이름중에 "text"가 포함된것 */
 
     /* (9)not 선택자 */
     #select9 p:not(.active){  /* active클래스를 제외한 나머지 p에 적용 */
-      font-size: 32px;
-      color: red;
+      font-size: 32px; 
+      color: blue;
     }
+
     #select9 ul li{
       list-style-type: none;
       display: inline-block;
       padding: 0 20px;
+      /* 방법(1) */
       /* border-left: 1px solid red; */
     }
     /* #select9 ul li:first-child{border-left: none;} */
-    #select9 ul li:not(:first-child){border-left: 2px solid crimson;}
 
+    /* 방법(2) */
+    #select9 ul li:not(:first-child){border-left: 1px solid red;}
+
+    /* 
+    방법(1) : 왼쪽 또는 오른쪽에 모두 선(border)을 주고 맨앞 또는 맨위에 선을 없앤다.
+    방법(2) : 처음부터 not선택자를 이용해서 해당되는것을 제외하고 모두 적용하게 한다.   
+    */
+  
     /* (10) 00 ~ 00 범위 지정하기
     형식: nth-child(n+k):nth-child(-n+m)
     예)nth-child(n+4):nth-child(-n+8) -> 4번째에서 8번째
@@ -133,7 +144,7 @@
     /* 11번째부터 ~ */
     #select10 ul li:nth-child(n+11){
       color: blue;
-      background-color: skyblue;    
+      background-color: skyblue;   
     }
   </style>
 </head>
@@ -185,8 +196,8 @@
   <div id="select4">
     <p>구조선택자</p>
     <span></span>
-    <p>구조선택자</p> <!-- p:nth-child(3)일반구조 ->중간에 있는 <span>까지 포함해서 3번째임-->
-    <p>구조선택자</p> <!-- p:nth-of-type(3)형태구조 ->선택된 <p>중에서 3번째임-->
+    <p>구조선택자</p> 
+    <p>구조선택자</p>
   </div>
   <hr>
 

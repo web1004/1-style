@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>5-여백과테두리</title>
   <style>
+    /* 웹브라우저에는 기본적인 margin이 존재함 */
     body{margin: 0;}
 
     .box1{
@@ -13,12 +14,12 @@
       border-width: 20px;
       border-color: red;
       margin: 100px;  /* 바깥여백 */
-      padding: 50px;  /* 안쪽여백(크기가 변경됨) */
+      padding: 50px; /* 안쪽여백(크기가 변경됨) */
     }
     .box2{
       background-color: aqua;
-      margin-left: 50px;
-      padding-left: 50px;
+      margin-left: 60px;
+      padding-left: 100px;
     }
 
     .mbox1, .mbox2, .mbox3{
@@ -27,6 +28,7 @@
     }
     .mbox1{
       background-color: blue;
+      /* padding-bottom: 20px; -> 안쪽여백이기 때문에 사이가 벌어지지않고 안쪽 크기가 늘어남*/
       margin-bottom: 20px;
     }
     .mbox2{
@@ -35,7 +37,7 @@
     }
     .mbox3{
       background-color: green;
-      margin-top: 50px; /* 20px과 50px이 겹쳐지면 큰쪽인 50px이 적용됨 */
+      margin-top: 50px; /* 20px(아래)과 50px(위)이 겹쳐지면 큰쪽인 50px이 적용됨 */
     }
     /* 박스요소의 margin속성 사용시 주의할점!!
     세로로 배치할 경우 마진과 마진이 만날때 마진값이 큰쪽으로 겹쳐지는 현상이다.
@@ -58,7 +60,7 @@
     .bs7{border-style: groove;}
     .bs8{border-style: inset;}
     .bs9{border-style: outset;}
-    
+
     h1{
       /* border-style: solid;
       border-width: 10px;
@@ -66,6 +68,7 @@
 
       border: 10px solid crimson;
       margin: 50px;
+
       /* padding-top: 20px;
       padding-bottom: 20px;
       padding-left: 0;
@@ -84,17 +87,19 @@
 
       /* border-style: solid;
       border-color: green;
+
       border-top-width: 10px;
       border-bottom-width: 20px;
       border-left-width: 5px;
       border-right-width: 30px; */
 
       border: solid green;
-      /* border-width: 10px; ->값이 1개일때는 상,하,좌,우 동일*/
-      /* border-width: 10px 20px; ->값이 2개일때는 상하,좌우*/
+      /* border-width: 10px; ->값이 1개일때는 상,하,좌,우 동일 */
+      /* border-width: 10px 20px; ->값이 2개일때는 상하,좌우 */
       /* border-width: 3px 10px 30px; ->값이 3개일때는 상,좌우,하 */
       border-width: 10px 30px 20px 5px;  /* 값이 4개일때는 상,우,하,좌 */
     }
+
     /* 문제: 데시선, 블루, 상하 10px/좌우 0, 안쪽여백 상하 20px/좌우 10px */
     h3{
       /* border-style: dashed;

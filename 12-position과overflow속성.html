@@ -12,13 +12,14 @@
     }
     .items .item1{
       background-color: gold;
-      position: static; /* 기본값-입력한 순서대로 나옴 */
+      position: static;  /* 기본값-입력한 순서대로 나옴 */
     }
     .items .item2{
       background-color: yellowgreen;
-      position: relative; /* 상대값으로 html구조상 처음 입력이 된 위치를 기준으로 (0,0)이 됨 */
+      position: relative;  /* 상대값으로 html구조상 처음 입력이 된 위치를 기준으로 (0,0)이 됨 */
       top: 100px;
       left: 200px;
+
     }
     .items .item3{
       background-color: crimson;
@@ -34,16 +35,16 @@
       background-color: royalblue;
       position: absolute;
       top: 100px;
-      right: 50px;
+      right: 100px;
     }
 
     /* 03 */
     .box_main{  /* 부모 */
       border: 5px solid #000;
       width: 800px;
-      height: 300px; 
-      position: relative;/* 부모설정 */
-      overflow: hidden; /* 자식이 부모보다 넘쳤을때 설정(hidden,auto,scroll) */
+      height: 300px;
+      position: relative;  /* 부모설정 */
+
     }
     .box1, .box2, .box3{  /* 자식 */
       width: 200px;
@@ -70,10 +71,10 @@
       left: 200px;
       z-index: 1;
     }
-    /* (중요!!!) 
+    /* (중요!!!)
     기본적으로 z-index:0 이며, 숫자가 클수록 위에 올라옴
     z-index가 같다는 기준으로 relative가 absolute보다 우선
-    z-index가 같다는 기준으로 2개의 absolute가 있으면 html 출현 순서가 나중에 나온 것이 우선한다.   
+    z-index가 같다는 기준으로 2개의 absolute가 있으면 html 출현 순서가 나중에 나온 것이 우선한다.      
     */
 
     /* 04 */
@@ -91,7 +92,7 @@
       font-weight: bold;
       border-radius: 50%;
       text-align: center;
-      line-height: 50px;     
+      line-height: 50px;
     }
 
     /* 05 position:absolute 또는 position:fixed 를 적용하면 모든 태그가 inline-block으로 변경됨(display속성을 적용하지 않아도 됨)*/
@@ -122,13 +123,13 @@
       margin: 200px auto;
       position: relative;  /* 부모설정 */
     }
-    .parent div[class*=inside]{  /* inside1~inside5 클래스 모두 선택*/
+    .parent div[class*=inside]{  /* 속성선택자로 inside1~inside5 클래스 모두 선택*/
       background-color: gold;
       width: 200px;
       height: 100px;
       position: absolute;
     }
-    .parent div[class*=outside]{ /* outside1~outside8 클래스 모두 선택*/
+    .parent div[class*=outside]{  /* 속성선택자로 outside1~outside8 클래스 모두 선택*/
       background-color: #d412bb;
       width: 200px;
       height: 100px;

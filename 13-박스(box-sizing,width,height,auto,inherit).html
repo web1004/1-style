@@ -5,21 +5,20 @@
   <title>13-박스(box-sizing,width,height,auto,inherit)</title>
   <style>
     .box-sizing-frame{
-      width: 600px;
-      height: 100px;
+      width: 600px;  /* 컨텐츠를 감싸는 가로크기 */
+      height: 100px; /* 컨텐츠를 감싸는 세로높이 */
       border: 10px solid green;
       padding: 20px;
     }
     /* 
     전체 너비는 600+(border좌우)20+(padding좌우)40 = 660px
-    전체 높이는 100+(border상하)20+(padding상하)40 = 160px 
+    전체 높이는 100+(border상하)20+(padding상하)40 = 160px     
     */
 
     .wrapper{
       width: 300px;
       height: 100px;
       border: 5px solid gray;
-      background-color: lightyellow;
       overflow: hidden;  /* float 문제해결 */
     }
     .one, .two{
@@ -34,14 +33,17 @@
     /* box-sizing속성
     width와 height 속성은 글자를 감싸는 영역의 크기를 지정하는 스타일속성이며,
     box-sizing속성은 width속성과 height속성이 차지하는 범위를 지정한다.
+    다시 말해, box-sizing속성은 width,height에 border,padding,maring 을 포함시킬거냐를 결정함
 
     전체너비 = width + 2×(margin+border+padding)
     전체높이 = height + 2×(margin+border+padding) 
     */
 
+
     /* 
     기본너비(width) 값은 display속성에 따라 다름
     기본높이(height)값은 auto
+    block태그들은 가로기본이 100%이고, inline과 inline-block태그들은 컨텐츠크기만큼이다.
     */
     .box1 span,
     .box1 div,
@@ -58,8 +60,8 @@
     .box2 .item{
       border: 10px solid yellowgreen;
       height: 300px;
-      float: left;  /* float를 적용하면 inline-block로 변경되어서 가로너비가 100%에서 컨텐츠만큼으로 변경됨 */
-      width: calc(800px / 3);  /* 연산기호 좌우에 공백이 반드시 있어야 함 */
+      float: left; /* float를 적용하면 inline-block로 변경되어서 가로너비가 100%에서 컨텐츠만큼으로 변경됨 */
+      width: calc(800px / 3); /* 연산기호(+,-,*,/) 좌우에 공백이 반드시 한칸씩 있어야 함 */
       box-sizing: border-box;  /* 부모의 크기가 모자라서 자식이 내려감 -> border를 포함할수 있도록 box-sizing을 사용 */
     }
 
@@ -71,7 +73,7 @@
     }
     .parent1 .child{
       background-color: blue;
-      width: inherit;  /* 상위부모값을 상속받음 -> width:500px */
+      width: inherit; /* 상위부모값을 상속받음 -> width:500px */
       height: inherit; /* 상위부모값을 상속받음 -> height:300px */
     }
 
@@ -79,12 +81,13 @@
       border: 5px solid red;
       width: 300px;
       height: 450px;
-      border-radius: 20px;
-      overflow: hidden;
+      border-radius: 30px;  /* 부모가 둥근모서리를 해도 자식인 이미지는 넘침 */
+      overflow: hidden;  /* 넘치는 자식을 숨김 */
+
     }
     .parent2 img{ /*삽입한 이미지는 부모보다 큰 경우는 넘친다. */
       width: inherit;
-      height: inherit;;
+      height: inherit;
     }
 
     /*
@@ -98,13 +101,13 @@
     }
     .mcontent div{
       background-color: #ddd;
-      /* width:max-content; */
-      width:min-content;
+      /* width:min-content; */
+      width:max-content;
     }
   </style>
 </head>
 <body>
-  
+  다시
   <h1>box-sizing속성</h1>
   <div class="box-sizing-frame">Caculating the actual content size</div>
 

@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <title>22-컬럼으로분할하는column-count속성</title>
   <style>
+    /* column-count속성은 전체 레이아웃을 구성하는데보다는 구성안의 일부분 영역을 나누고 싶을때 사용한다. */
     div{
       line-height: 28px;
       column-count: 3;
-      /* column-width: 200px; ->column-count와 중복사용할수 없음 */
+      /* column-width: 200px; ->column-count와 중복사용할수 없음*/
       /* column-rule-width : 3px;
       column-rule-style : solid;
-      column-rule-color : crimson; */
-      column-rule: 3px solid crimson;
-      column-gap: 40px;
+      column-rule-color : red; */
+      column-rule: 3px solid red;
+      column-gap: 40px
     }
     div h1{
       column-span: all;

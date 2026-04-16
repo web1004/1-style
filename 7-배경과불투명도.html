@@ -9,21 +9,29 @@
       color: #999;
     }
 
+    /* repeat속성값이  repeat-x(top/center/bottom)와 repeat-y(left/center/right)일때는 postion의 값을 한개만 넣어도 된다.*/
+
+    /* 
+    중요!!!!!!!!!!!!!!
+    <img src=""> 태그 :이미지삽입->크기를 변경하려면 width,height 사용
+    background속성 :배경이미지 ->크기를 변경하려면  background-size 사용
+    */
+
     /* body{
       background-image: url(image/flower2.png);
       background-repeat: no-repeat;
-      background-position: right top;
-      background-attachment: fixed;
-      background-size: 200px;
+      background-position: right top; ->가로위치/세로위치 
+      background-attachment: fixed;  ->배경그림 고정 
+      background-size: 200px;  ->배경이미지의 사이즈 변경
     } */
 
-    /* 축약1
-    body{
+    /* 축약1 */
+    /* body{
       background: url(image/flower2.png) no-repeat right top fixed;
       background-size: 200px;
     } */
 
-    /* 축약2 :background-size는 poistion값에 이어서 / 로 연결하여 축약함 */
+    /* 축약2:background-size는 poistion값에 이어서 / 로 연결하여 축약함 */
     /* body{background: url(image/flower2.png) no-repeat right top/200px fixed;} */
 
     /* body{
@@ -34,8 +42,8 @@
     /* body{background: url(image/crop.jpg) no-repeat center/cover;} */
 
     /* background-size:배경으로 넣은 이미지의 사이즈를 조정
-    contain: 이미지를 자르거나 늘리지않고 컨테이너 내에서 이미지 크기를 최대한 조정
-    cover:이미지의 비율을 유지하면서 컨테이너를 채울수 있도록 함(높이와 너비가 모두 컨테이너를 완전히 덮음)
+    contain:이미지를 자르거나 늘리지않고 컨테이너 내에서 이미지 크기를 최대한 조정
+    cover:이미지의 비율을 유지하면서 컨테이너를 채울수 있도록 함(높이와 너비가 모두 컨테이너를 완전히 덮음-Full Screen)
     auto:고유한 비율이 유지되도록 해당방향으로 이미지 크기 조정
     */
 
@@ -46,26 +54,21 @@
       margin: 10px;
       background-image: url(image/blueheart.png);
     }
-    .back1 div.bg1{background-repeat: no-repeat;}  /* 한번만 */
-    .back1 div.bg2{background-repeat: repeat-x;}  /* 가로방향반복 */
-    .back1 div.bg3{background-repeat: repeat-y;}  /* 세로방향반복 */
-    .back1 div.bg4{background-repeat: space;} /* 일정한 간격을 줌 */
-    .back1 div.bg5{background-repeat: round;} /* 간격없이 붙음 */
-
-    /* 
-    div.bg1{} ->공백이 없는 경우는 자식개념이 아님 동등한 위치에 선택자임을 뜻함 
-    div .bg1{} -> 공백이 있는 경우는 자식개념이 되어서 div태그 아래에 있는 bg1 클래스를 뜻함
-    */
+    .back1 .bg1{background-repeat: no-repeat;} /* 한번만 */  
+    .back1 .bg2{background-repeat: repeat-x;} /* 가로방향반복 */   
+    .back1 .bg3{background-repeat: repeat-y;} /* 세로방향반복 */   
+    .back1 .bg4{background-repeat: space;} /* 일정한 간격을 줌 */ 
+    .back1 .bg5{background-repeat: round;} /* 간격없이 붙음 */  
 
     .back2 div{
-      border: 5px solid red;
+      border: 5px solid #000;
       width: 400px;
       height: 400px;
       margin: 10px;
     }
 
     /* 배경이미지+배경색 */
-    .back2 .bg6{background: url(image/logo2.png) no-repeat right bottom/100px gold;}
+    .back2 .bg6{background: url(image/bg.png) no-repeat right bottom/80px gold;}
 
     /* 배경이미지+배경이미지 */
     .back2 .bg7{
@@ -81,6 +84,7 @@
       linear-gradient(to right, #0fd850 0%, #f9f047 100%);
     }
 
+
     /* 불투명도 */
     body{background-image: url(image/bg-img1.png);}
 
@@ -94,13 +98,14 @@
       color: #fff;
       /* background-color: #000;
       opacity: 0.5; 
-      ->위의 방법으로 불투명도를 사용하게 되면 배경이외에 안의 텍스트도 같이 불투명해진다.->해결방법:rgba를 사용한다.
+      ->위의 방법으로 불투명도를 사용하게 되면 배경이외에 안의 텍스트도 같이 불투명해진다.->해결방법:rgba를 사용한다.     
       */
       /* background-color: rgba(0,0,0,0.5); */
       background: rgba(0,0,0,0.5);
+
     }
     table td{border: 1px dashed #666;}
-  </style>  
+  </style>
 </head>
 <body>
   

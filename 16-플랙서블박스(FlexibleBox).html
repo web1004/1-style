@@ -37,11 +37,13 @@
       width: 100px;
     }
 
-    /* (1)Flex Container(부모)에 적용하는 속성들_____________ */
-    .container11{display: flex;}
-    .container12{display: inline-flex;}
+    /* Flex Container(부모)에 적용하는 속성들_____________ */
 
-    /* (2)flex-direction(메인축의 방향을 결정) */
+    /* (1)플렉서블을 사용하려면 반드시 부모에게 사용한다고 알려줘야 함 */
+    .container11{display: flex;}   /* block-무조건 부모가 가로 100%*/
+    .container12{display: inline-flex;}  /* inline-자식크기만큼 부모크기가 됨 */
+
+    /* (2)flex-direction(메인축의 방향을 결정)*/
     .container21{flex-direction: row;}  /* 기본값 */
     .container22{flex-direction: row-reverse;}
     .container23{flex-direction: column;}
@@ -54,8 +56,8 @@
 
     /* (4)flex-flow (flex-direction + flex-wrap)*/
     .container41{flex-flow:row wrap;}
-    .container42{flex-flow:row nowrap;} 
-
+    .container42{flex-flow:row nowrap;}
+    
     /* (5)justify-content(중요)-메인축이 가로인 상태에서 수평정렬 */
     .container51{justify-content:flex-start;}
     .container52{justify-content:flex-end;} 
@@ -64,7 +66,7 @@
     .container55{justify-content:space-around;}
     .container56{justify-content:space-evenly;} 
 
-    /* (6)align-items(중요)-메인축이 가로인 상태에서 수직정렬(높이값이 있어야 함) */
+    /* (6)align-items(중요)-메인축이 가로인 상태에서 수직정렬(높이값이 있어야 함) */ 
     .container61{align-items:stretch;} /* 기본값 */
     .container62{align-items:flex-start;} 
     .container63{align-items:flex-end;}
@@ -88,10 +90,12 @@
     .container8 .box4{align-self:flex-end;}  
     .container8 .box5{align-self:center;} 
 
-    /* (2)flex : flex-grow,flex-shrink,flex-basis 의 단축속성 
+    /* (2)flex(중요) : flex-grow,flex-shrink,flex-basis 의 단축속성 
     flex-basis : 공간을 분배하기 전에 아이템이 기본적으로 가지는 크기를 지정한다.
     flex-grow : 아이템의 크기가  flex-basis로 지정된 기본크기에서 얼마나 늘어날수 있는지를 지정하는 속성이다. 
-    flex-shrink : 아이템의 크기가  flex-basis로 지정된 기본크기에서 얼마나 줄어들수 있는지를 지정하는 속성이다.   
+    flex-shrink : 아이템의 크기가  flex-basis로 지정된 기본크기에서 얼마나 줄어들수 있는지를 지정하는 속성이다. 
+    
+    예)flex:2; ->grow는 2이고, 생략된 부분은 shrink 1(기본값) basis 0(기본값)
     */
     .container9{
       width: 1200px;
@@ -101,18 +105,18 @@
     }
     .container9 .box91{
       background-color: aqua;
-      flex: 2; /*  flex: 2; ->grow는 2이고, 생략된 부분은 shrink 1 basis 0 */
+      flex: 2;
     }
     .container9 .box92{
       background-color: gold;
-      flex: 5;
+      flex: 3;
     }
     .container9 .box93{
       background-color: orangered;
-      flex: 1;
+      flex: 2;
     }
 
-    /* (3)order */
+    /* (3)order : 웹접근성에서는 맞지 않음->장애인전용 리더기에서 인식하지 못함(순서의 혼돈이 올수 있음)*/
     .container10{
       border: 5px solid gray;
       width: 600px;
@@ -139,14 +143,14 @@
       flex: 1;
     }
 
-    /* Flex Layout */
+    /* Flex Layout(모든 요소를 정가운데 정렬) */
     .yellowgreen{
       background-color: yellowgreen;
       width: 800px;
       height: 400px; 
-      display: flex;  /* 기본이 가로방향 */ 
+      display: flex;  /* 기본이 가로방향 */
       justify-content: center;
-      align-items: center;
+      align-items: center;  /* 부모의 높이값이 있어야 함 */
     }
     .yellowgreen .royalblue{
       background-color: royalblue;
@@ -154,15 +158,16 @@
       height: 300px;
       display: flex;  
       justify-content: center;
-      align-items: center;
+      align-items: center;  
     }
     .yellowgreen .royalblue .crimson{
       background-color: crimson;
       width: 400px;
       height: 150px;
-      display: flex;
+      display: flex;  
       justify-content: center;
-      align-items: center;
+      align-items: center; 
+      /* column-gap: 5px; ->플렉서블박스에서는 부모에세 margin대신 자식의 간격을 설정할수 있음 */
     }
     .yellowgreen .royalblue .crimson .gray{
       background-color: gray;

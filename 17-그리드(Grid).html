@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <title>17-그리드(Grid)</title>
   <style>
-    *{ /* "*"선택자는 모든 태그를 말함 */
-      margin: 0;
-      padding: 0;
-    }
-    h1{margin-top: 50px;}
-
     .container1{
       width: 800px;
       display: grid;
@@ -19,7 +13,7 @@
       grid-template-rows: 1fr 3fr;
       /* column-gap: 10px;
       row-gap: 30px; */
-      gap: 30px 10px; /* 행,열 */
+      gap: 30px 10px;  /* 행,열 */
     }
     /* px를 사용하면 고정되기 때문에 반응형웹에 맞게 하기 위해 상대적인 크기를 지정할수 있도록 fr(Fraction)단위를 사용 */
 
@@ -30,7 +24,7 @@
     .container1 .item:nth-child(5){background-color: gold;}
     .container1 .item:nth-child(6){background-color: royalblue;}
 
-    /* 행열병합 */
+    /*  행열 병합 */
     .container2{
       display: grid;
       grid-template-columns: 100px 200px 300px;
@@ -51,12 +45,13 @@
     .container2 .items:nth-child(5){background-color: gold;}
     .container2 .items:nth-child(6){background-color: royalblue;}
 
-    /* grid-area, repeat */
+    /*  grid-area, repeat */
     .container3{
       width: 1000px;
       height: 600px;
       display: grid;
       grid-template-columns: repeat(5,1fr)
+
     }
     .container3 div{
       height: 250px;
@@ -67,12 +62,12 @@
       line-height: 250px; */
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center; 
     }
     .container3 div:nth-child(1){
       background-color: #ddd;
       height: 500px;
-      grid-area: span 2/span 3; /* 행/열 */
+      grid-area: span 2/span 3;  /* 행,열 */
     }
     .container3 div:nth-child(2){background-color: #ccc;grid-area: span 1/span 2;}
     .container3 div:nth-child(3){background-color: #bbb;}

@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>10-하이퍼링크</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
     body{
       font-family: "Noto Sans KR", sans-serif;
       font-size: 18px;
       font-weight: 400;
       color: #555;
     }
+
     h1{
+      /* border: solid red ;
+      border-width: 0 0 0 10px; */
+
       border-left: 10px solid red;
       padding-left: 10px;
     }
 
-    /* 기본하이퍼링크 */
+    /* 기본 하이퍼링크 */
     /* a태그의 여러상태종류 
-    a:link, ->하이퍼링크가 걸린상태
-    a:visited, ->한번 누른적이 있는 상태
-    a:active, ->누르고 있는 동안상태
+    a:link ->하이퍼링크가 걸린상태
+    a:visited ->한번 누른적이 있는 상태
+    a:active ->누르고 있는 동안상태
     a:hover ->마우스오버 상태
     */
 
@@ -31,15 +37,15 @@
       text-decoration: none;
     } */
 
-    a{ /*하이퍼링크의 모든 상태를 말함(:link,:visited,:active,:hover) */
+    a{  /*하이퍼링크의 모든 상태를 말함(:link,:visited,:active,:hover) */
       text-decoration: none;
       font-weight: 500;
       color: crimson;
     }
     a:hover{
       color: royalblue;
-      /* text-decoration: underline;  
-      ->각각의 클래스에 적용하지 않은 스타일은 기본적용을 따르기 때문에 공통부분에 넣는것은 비추전
+      /* text-decoration: underline; 
+      ->각각의 클래스에 적용하지 않은 스타일은 기본적용을 따르기 때문에 공통부분에 넣는것은 비추전     
       */
     }
 
@@ -51,7 +57,7 @@
     .link1:hover{
       background-color: brown;
       color: gold;
-      /* padding: 2px 5px; ->오버시에만 여백을 넣으면 크기가 달라져서 옆의 글자들이 밀림 */
+      /* padding: 2px 5px; ->오버시에만 여백을 넣으면 크기가 달라져서 옆의 글자들이 밀림*/
     }
 
     .link2{color: yellowgreen;}
@@ -74,22 +80,29 @@
     .link4{
       /* border: 1px solid #000; */
       text-align: center;
-      margin-top: 200px;
       /* padding-top: 200px; */
+      margin-top: 200px;
     }
     .link4 a{
       font-size: 14px;
       color: #999;
       font-weight: normal; /* normal : 공통으로 설정한 굵기 500을 해제(일반굵기로 변경) */
+      /* text-align: center; ->a태그는 inline이라 적용되지않음*/
     }
-    /* a태그는 부모에 글자색을 넣어도 적용이 되지않고 반드시 a태그에 적용을 헤야 함 */
+    /* a태그는 부모에 글자색을 넣어도 적용이 되지않고 반드시 a태그에 직접 적용을 헤야 함 */
+
+
+
+
+
+
   </style>
 </head>
 <body>
   
   <h1>하이퍼링크란?</h1>
   <p>
-    인터넷에서 홈페이지를 방문한 경우 <a href="#none">파란글자에 밑줄이 있는 글자</a>나 어떤 그림이나 사진에 마우스 포인트를 올려놓으면 마우스 포인트가 화살표 모양에서 손 모양으로 바뀌는 것을 본 적이 있을 것이다.이렇게 마우스가 손 모양으로 바뀌는 것을 <a href="#none" class="link1">하이퍼텍스트</a>하고 하며, 하이퍼텍스트를 클릭하면 연결되어 있는 다른 페이지가나타난다. 하이퍼텍스트를 클릭하였을 때 다른 문서로 연결시켜주는 것을 <a href="#none" class="link2">하이퍼링크</a>라고 한다.
+    인터넷에서 홈페이지를 방문한 경우 <a href="#">파란글자에 밑줄이 있는 글자</a>나 어떤 그림이나 사진에 마우스 포인트를 올려놓으면 마우스 포인트가 화살표 모양에서 손 모양으로 바뀌는 것을 본 적이 있을 것이다.이렇게 마우스가 손 모양으로 바뀌는 것을 <a href="#none" class="link1">하이퍼텍스트</a>하고 하며, 하이퍼텍스트를 클릭하면 연결되어 있는 다른 페이지가나타난다. 하이퍼텍스트를 클릭하였을 때 다른 문서로 연결시켜주는 것을 <a href="#none" class="link2">하이퍼링크</a>라고 한다.
   </p>
 
   <p>

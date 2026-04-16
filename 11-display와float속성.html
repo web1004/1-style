@@ -10,7 +10,7 @@
       width: 500px;
       height: 100px;
       margin: 30px;
-      /* display: block; ->크기와 마진상하가 적용은 되지만 요소들이 한줄에 배치되지않음*/
+      /* display: block; ->크기와 마진상하가 적용은 되지만 요소들이 한줄에 배치되지않음 */
       display: inline-block; /* 줄이 바뀌지 않으면서 크기와 마진을 적용하려면 inline-block */
     }
     .dis1 div{
@@ -20,7 +20,7 @@
       margin: 30px;
       display: inline-block;
     }
-    .dis1 button{
+    .dis1 button{  /* button태그는 inline-block 으로 크기,마진이 모두 적용됨 */
       width: 500px;
       height: 100px;
       margin: 30px;
@@ -29,35 +29,44 @@
 
     /* 02 */
     .dis2{
-      border: 1px solid green;
-      width: 600px;
+      border: 10px solid green;
+      width: 800px;
       text-align: center;
       margin: auto;
-      /* 요소(자식을 품고 있는 부모)의 수평가운데 정렬-가로너비가 있어야 적용됨(가로100%는 적용되지않음) 
-      *marign: 200px auto; ->상하 마진 200px이고, 좌우는 auto 가운데정렬
-      *marign: 50px auto 20px; ->상 마진 50px이고, 좌우는 auto 가운데정렬, 하 마진 20px
-      */
     }
+    /* margin: auto;
+    요소(자식을 품고 있는 부모)의 수평가운데 정렬-가로너비가 있어야 적용됨(가로100%는 적용되지않음) 
+    결과적으로, 부모 자체가 가운데 정렬해야 할때는 "margin: auto;"를 사용하고,
+    부모(block)안에 자식들을 가운데로 정렬해야 할떄는 "text-align: center;"를 사용한다.
+
+    *marign: 200px auto; ->상하 마진 200px이고, 좌우는 auto 가운데정렬
+    *marign: 50px auto 20px; ->상 마진 50px이고, 좌우는 auto 가운데정렬, 하 마진 20px    
+    */
+
     .dis2 div{
-      border: 1px solid blue;
+      border: 2px solid blue;
       width: 300px;
-      margin: 50px auto; /* 상하 50px, 좌우는 가운데(auto) */
+      margin: 50px auto;
     }
     .dis2 span{
-      border: 1px solid purple;
+      border: 2px solid purple;
       width: 300px;
-      margin: 50px auto;  /* span태그는 inline요소로 적용되지않음 */
       display: block;
+      margin: 50px auto;
     }
     .dis2 button{
-      border: 1px solid red;
-      width: 400px;
-      margin: 50px auto
+      border: 2px solid red;
+      width: 300px;
+      margin: 50px 0;
     }
+    /* 
+    "text-align"속성은 block에만 넣을수 있고, 그안에는 inline,inline-block,텍스트만 적용될수 있다.
+    block 안에 들어있는 block자식들은 "margin: auto;"를 사용해서 정렬한다.
+    */
 
     /* 03 */
     .dis3{
-      border: 1px solid #000;
+      border: 3px solid orange;
       text-align: center;
     }
 
@@ -67,6 +76,7 @@
     .dis4 button{background-color: royalblue}
 
     /* 05 */
+    .dis5{overflow: hidden;}  /* float 문제해결 */
     .dis5 div{
       width: 200px;
       height: 300px;
@@ -74,18 +84,19 @@
       font-weight: bold;
       color: #fff;
       text-align: center;
-      /* vertical-align: middle;  ->적용되지않음*/ 
+      /* vertical-align: middle; ->적용되지않음*/
       line-height: 300px;
-      display: inline-block; /* 가로배열이 가능하지만 오른쪽에 5px정도의 기본여백이 생김 */
-      /* float: left; */
+      /* display: inline-block; */ /* 가로배열이 가능하지만 오른쪽에 5px정도의 기본여백이 생김 */
+      float: left; /* 문제발생: 다음에 오는 요소를 옆으로 무조건 끌어당김 */
       cursor: pointer; /* a태그를 사용하지 않아도 손모양이 나오게 함 */
     }
     .dis5 .child1{background-color: skyblue;}
+    /* 안보이게 하는 방법 3가지 */
     .dis5 .child2{
       background-color: yellowgreen;
-      /* display: none; */  /* 공간도 없고 존재도 하지 않기 때문에 커서포인터를 줄수 없음 */
-      /* visibility:hidden; */  /*공간은 있지만 존재 자체는 사라지기 때문에 커서포인터를 줄수 없음 */ 
-      opacity: 0; /*공간도 있고 존재 자체도 있고 보이지만 않을뿐이므로 커서포인터를 줄수 있음 */
+      /* display: none; */  /* (1)공간도 없고 존재도 하지 않기 때문에 커서포인터(손모양)를 줄수 없음 */
+      /* visibility:hidden;  */  /*(2)공간은 있지만 존재 자체는 사라지기 때문에 커서포인터(손모양)를 줄수 없음 */
+      opacity: 0; /*(3)공간도 있고 존재 자체도 있고 보이지만 않을뿐이므로 커서포인터(손모양)를 줄수 있음 */
     }
     .dis5 .child3{background-color: gray;}
 

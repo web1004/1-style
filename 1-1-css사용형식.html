@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <title>1-1-css사용형식</title>
   <style>
-    body{background-color: #ccc;}
-    h2{background-color: #000;color: #fff;}
-    h3{color: crimson;text-align: center;}
-    p{color: royalblue;margin-left: 200px;}
+    /* 선택자{속성:값;속성:값;.......}  */
+    body{background-color:#ccc;}
+    h2{background-color: #000;color:#fff;}
+    h3{color: crimson;margin-left: 300px;}
+    p{color: royalblue;text-align: center;}
   </style>
 </head>
 <body>
 
   <div>
     <h2>css사용형식1:문서내 &lt;head&gt;와 &lt;/head&gt;사이에 css선언하기</h2>
-    <h3>스타일 시트예제</h3>
+    <h3>스타일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;시트예제</h3>
     <p>이 예에서는 문자색, 배경색, 왼쪽여백을 설정하고 있습니다.</p>
   </div>
 
-  <!-- <p>&copy; &lt; &gt; &amp; &nbsp;(공백한칸)</p> -->
+  <!-- 특수문자 사용하기(&로 시작해서 ; 으로 끝남) -->
+  <p>특수문자 사용하기</p>
+  <div>&copy; &lt; &gt; &amp; &nbsp;(공백한칸) &reg; &#xA9; &#169; &hearts; &#9829;</div>
 
 </body>
 </html>

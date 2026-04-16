@@ -4,30 +4,34 @@
   <meta charset="UTF-8">
   <title>20-animation속성</title>
   <style>
-
-    /* 
+    /* 기본형식->삽입위치 상관없음
     @keyframes 애니메이션이름{
-      ....
-    } */
+      0%{}
+      100%{}
+    } 
+    0%  또는  from :시작위치
+    100%  또는 to :끝위치    
+    */
 
-    /* 0% -> from , 100% -> to*/
+
     @keyframes rotate-ani{
+      0%{transform: rotate(0);}
       100%{transform: rotate(360deg);}
     }
-
     .rotate{
-      margin: 100px;   
-      animation: rotate-ani 5s linear infinite;
+      margin: 100px;
+      animation:rotate-ani 5s linear infinite;  /* linear:등속도(처음부터 끝까지 동일한 속도) */
       transform-origin: 50% 50%;
       /* transform-origin의 50% 50%은 회전의 중심 위치를 나타내며, 완전 원형으로 회전시키려면 이미지 파일의 정중앙에 회전시키려는 중심이 위치해야한다. */
     }
 
+
     @keyframes scale-ani{
-      0%, 15%{transform: scale(0);}
+      0%,15%{transform: scale(0);}
       /* 15%{transform: scale(0);} */
       40%{transform: scale(0.95);}
       70%{transform: scale(0.65);}
-      100%{transform: scale(1);}   
+      100%{transform: scale(1);}
     }
     .scale{animation: scale-ani 5s linear infinite alternate;}
 
@@ -43,10 +47,9 @@
       width: 100px;
       height: 100px;
       background-color: blueviolet;
-      border-radius: 50%; 
+      border-radius: 50%;
       animation: ball-ani 2s linear infinite;
     }
-    .ball:hover{animation-play-state: paused;}
 
     @keyframes colorbox-ani{
       0%{
@@ -111,10 +114,9 @@
     .box2{
       background-color: red;
       animation: anibox2 3s infinite;
-      animation-delay: 3s;  /* 지연시간 */
       display: inline-block;
-    }  
-    /* transform, animation 속성은 inline형식의 태그에는 적용되지 않음*/ 
+    }
+    /* transform, animation 속성은 inline형식의 태그에는 적용되지 않음 */
   </style>
 </head>
 <body>

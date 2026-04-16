@@ -11,7 +11,7 @@
       border: 2px solid #000;
       background-color: gold;
       /* transition: all 0.5s 2s linear; */
-      /* 작성한 스타일모두 재생시간 지연시간 가속도 */    
+      /* 작성한 스타일모두 재생시간 지연시간 가속도 */
       transition: 0.5s;
     }
     .box:hover{
@@ -37,8 +37,15 @@
     #tr .ease-in{transition: 3s ease-in;}
     #tr .ease-out{transition: 3s ease-out;}
     #tr .ease-in-out{transition: 3s ease-in-out;}
+    /*hover의 위치
+    #tr div:hover{}
+    ->tr부모안의 각각 자식들 요소에 마우스를 올렸을때
+    
+    #tr:hover div{}
+    ->부모 전체 영역에 마우스를 올렸을때 각각의 자식이 어떻게 할건지
+    */
 
-    /* 베지어곡선 넣기 */
+    /* 베지어곡선 넣기(가속도 변화)*/
     .cubbox{
       width: 500px;
       height: 100px;
@@ -49,7 +56,8 @@
       height: 50px;
       border: 1px solid #000;
       background-color: yellowgreen;
-      transition: 0.5s cubic-bezier(.17,.93,.93,-0.01);
+      /* transition: 0.5s ease-in-out ->크로브라우저에서 F12 단축키를 누르면 오른쪽에 개발자모드화면이 뜸*/
+      transition: 0.5s cubic-bezier(0.93,-0.25, 0.22, 1.28);
     }
     .cubbox:hover .cub{
       margin-left: 400px;

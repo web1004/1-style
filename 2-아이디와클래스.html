@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>2-아이디와클래스</title>
   <style>
-    /* p{color: red;} ->모든 p태그에 적용이 됨*/
+    /* p{color:red;} -> 모든 p태그에 적용이 됨*/
     /* 
-    .클래스명{속성:값;}  -><태그명 class="클래스명">...</태그명>
-    #아이디명{속성:값;}  -><태그명 id="아이디명">...</태그명>
-    클래스,아이디명은 숫자로 시작할수 없다. 반드시 영문으로 시작해야 한다.(대소문자 구분)
+    .클래스명{속성:값;} -><태그명 class="클래스명">....</태그명>
+    #아이디명{속성:값;} -><태그명 id="아이디명">....</태그명>
+    클래스,아이디명은 숫자로 시작할 수 없다. 반드시 영문으로 시작해야 한다.(대소문자 구분)
     */
 
     .aa{color: green;}
@@ -16,11 +16,12 @@
     #aa{color: crimson;}
     #bb{font-weight: bold;}
 
+
     .tt{background-color: gold;text-align: center;}
     .t01{
       color: crimson;
       font-weight: bold;
-      font-size: 26px;
+      font-size: 32px;
     }
     .t02{color: royalblue;font-style: italic;}
   </style>
@@ -28,12 +29,14 @@
 <body>
 
   <p>이것은 보통 단락입니다.</p>
-  <p class="aa bb">색상이 적용됩니다.</p> <!-- class는 1개 이상 적용할수 있음 -->
+  <p class="aa">색상이 적용됩니다.</p> 
   <p class="bb">진하게 표시됩니다.</p>
-  <p id="aa bb">색상이 적용됩니다.</p>  <!-- id는 1개 이상 적용할수 없음 -->
+  <p id="aa">색상이 적용됩니다.</p> 
   <p id="bb">진하게 표시됩니다.</p>
-  <p class="bb">진하게를 또 적용합니다.</p> <!-- class는 문서내에서 여러번 불러서 적용할수 있음 -->
-  <p id="bb">진하게를 또 적용합니다.</p> <!-- id는 문서내에서 동일한 id를 다른곳에 적용할수 없음 -->
+  <p class="aa bb">진하게와 그린색상을 클래스로 같이 적용합니다.</p> <!-- class는 1개 이상 적용할수 있음 -->
+  <p id="aa bb">진하게와 빨강색을 같이 아이디로 적용합니다.</p> <!-- id는 1개 이상 적용할수 없음 --> 
+  <p id="aa">동일한 아이디를 또 적용합니다.</p>
+  <!-- class는 문서내에서 동일한 클래스를 여러번 불러서 적용할수 있지만, id는 문서내에서 동일한 id를 한 번만 적용할수 있음  -->
 
   <div class="tt">
     <h1>center태그를 사용한다면...</h1>

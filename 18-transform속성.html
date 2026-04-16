@@ -10,11 +10,17 @@
       height: 100px;
       border: 2px solid #000;
       background-color: gold;
-      transition: 0.5s;
     }
-
     .box1:hover{
       /* transform: translateX(30px) translateY(10px); */
+      /*
+      예) 
+      transform: translateX(30px);
+      transform: translateY(10px);
+      ->transform속성은 여러가지 속성을 사용할때는 위에처럼 각각 사용할수 없음. 
+
+      예)transform: translateX(30px) translateY(10px); ->올바른 사용
+      */
       transform: translate(30px,10px);
     }
 
@@ -30,7 +36,7 @@
 
     .box4:hover{
       transform: rotate(-40deg);
-      transform-origin: right bottom;
+      transform-origin: right bottom;  /* 중심점 변경 */
     }
 
     .per{perspective:200px;}
