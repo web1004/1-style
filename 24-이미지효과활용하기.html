@@ -30,55 +30,58 @@
       background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
     }
     /* 신규속성으로 브라우저에 적용이 안되므로 접두사를  붙여야 함 
       -webkit- : 크롬,사파리 브라우저 접두사
+      -moz- : 파이어폭스
     */
     .backgroundclip{
       font-size: 170px;
       font-weight: 700;
       text-transform: uppercase; 
       text-align: center;
-      background-image: url(image/crop.jpg);  
+      background-image: url(image/crop.jpg);
       background-repeat: no-repeat;
-      background-size: 120% cover;
       background-position: center;
+      background-size: 120% cover;
+      -webkit-background-clip: text;  /* 엣지에도 적용 */
       background-clip: text;  /* background-clip->대상을 텍스트로 지정한다 */ 
-      color: rgba(0,0,0,0);  /* 텍스트 색상을 투명으로 한다 */
+      color: rgba(0,0,0,0);
     }
 
-    /* 03 */
+    /* 03 클리핑마스크 속성 */
     .img_mask{
-      width:777px; 
-      height:777px;
+      width: 777px;
+      height: 777px;
+      -webkit-mask-image:url(image/mask.png);  /* 엣지에는 적용되지 않음 */
       mask-image:url(image/mask.png); /* 마스크모양으로 사용할 이미지 */
     }
 
     /* 04 */
     .bg-blend{
-      width: 300px;
-      height: 300px;
+      width: 400px;
+      height: 400px;
       background: url("image/blush.png") pink;
       background-blend-mode: screen;
     }
-
-    .frame{
-      border: 5px solid #000;
+    .container {
+      margin-top: 50px;
       width: 500px;
-      height: 500px;
-      background: url(image/trip.jpg) no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-    .frame div{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      border: 2px solid #fff;
-      width: 400px;
       height: 400px;
-      backdrop-filter: blur(5px);
+      background-image:linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+    .container .box{
+      width: 300px;
+      height: 200px;      
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);  /* 기존의 filter속성과 비슷한 기능이지만 아직은 적용안됨 */
     }
   </style>
 </head>
@@ -87,7 +90,7 @@
   <h1>01.mix-blend-mode, background-blend-mode : 혼합모드 적용하는 속성</h1>
   <div class="logo-bg">
     <img src="image/coffee-logo-white.png" alt="">
-    <!-- <img src="image/coffee-logo-color.png" alt="">  --> <!--배경색이 있는 경우는 투과되지않음-->
+    <!--<img src="image/coffee-logo-color.png" alt="">  ->배경색이 있는 경우는 투과되지않음-->
   </div>
   <hr>
 
@@ -98,15 +101,18 @@
 
   <h1>03.이미지에 마스크효과주기(클리핑마스크)</h1>
   <div class="img_mask">
-    <img src="image/img.jpg" alt="" >
+    <img src="image/img.jpg" alt="" > <!-- 마스크모양에 삽입할 이미지 -->
   </div>
   <hr>
 
   <h1>04.backdrop-filter 속성</h1>
   <div class="bg-blend"></div>
-  <div class="frame">
-    <div></div>
+
+  <div class="container">
+  <div class="box">
+    <p>backdrop-filter: blur(10px)</p>
   </div>
+</div>
 
 </body>
 </html>

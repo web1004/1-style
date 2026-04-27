@@ -9,17 +9,17 @@
     counter-increment : 카운터 변수의 증가 단위를 설정(자식요소에 사용)    
     */
 
-    section{counter-reset: num;}  /* (1)부모에 counter함수를 사용할 변수를 지정 */
+    section{counter-reset: num;} /* (1)부모에 counter함수를 사용할 변수를 지정 */
     section div:before{
       content: counter(num) " - ";  /* (2)자식의 가상클래스에 counter()함수사용 */
-      counter-increment: num;  /* (3)카운터 변수의 증가단위 설정 */
+      counter-increment: num; /* (3)카운터 변수의 증가단위 설정 */
     }
+
 
     .list{
       list-style-type: none;
       padding: 0;
     }
-
     .list.count1{counter-reset: best;}
     .list.count1 li:before{
       content: "Best Program 0" counter(best) "-";
@@ -80,7 +80,8 @@
       margin-right: 10px;
     }
 
-    /* 변수(variables) 설정  
+    /* 
+    변수(variables) 설정  
     :root { --변수명: 값; }
     ex) :root { --focusColor: crimson; }
     
@@ -92,7 +93,7 @@
     *특수문자 사용할 경우 - 또는 _ 사용 ex) focus-color, focus_color
     */
 
-    /* (1)사용할 변수선언 */
+    /* (1)시용할 변수 선언 */
     :root{
       /* 변수명 :  값; */
       --primary: skyblue;
